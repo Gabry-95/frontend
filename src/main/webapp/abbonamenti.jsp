@@ -60,65 +60,114 @@
 		</div>
 	</nav>
 
-	<div class="container py-5">
-    <div class="row justify-content-center g-4">
-    <div class="container px-4 px-lg-5 text-center">
-			<h1 class="mb-1">I nostri Piani di Abbonamento</h1>
+	<!-- container piani di abbonamento -->
+	<div class="piani-abbonamento">
+		<div class="row justify-content-center g-4">
+			<div class="container px-4 px-lg-5 text-center">
+				<h1 class="mb-1">I nostri Piani di Abbonamento</h1>
+			</div>
+			<div class="col-md-4">
+				<div class="pricing-card card h-100 p-4">
+					<div class="card-body text-center">
+						<h5 class="text-muted text-uppercase mb-3">Standard</h5>
+						<h2 class="display-4 fw-bold mb-4">30€/Mese</h2>
+						<p class="text-muted mb-4">Perfetto per chi vuole iniziare</p>
+						<!-- Vantaggi -->
+						<ul class="list-unstyled feature-list mb-4"
+							style="color: rgb(0, 208, 2)">
+							<li>
+								<p><i class="fa-solid fa-check"></i>
+								Accesso a tutte le nostre sedi</p> 
+								<p><i class="fa-solid fa-check"></i>
+								Accesso Illimitato alla sala pesi</p>
+							</li>
+						</ul>
+						<!-- Limiti -->
+						<ul class="list-unstyled feature-list mb-4"
+							style="color: rgb(255, 0, 0)">
+							<li>
+								<p><i class="fa-solid fa-x"></i>
+								Non puoi Accedere ai nostri Corsi</p> 
+								<p><i class="fa-solid fa-x"></i>
+								Limite di 3 ingressi settimanali</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="pricing-card card h-100 p-4 border-2 border-primary">
+					<span class="badge bg-primary popular-badge">Popular</span>
+					<div class="card-body text-center">
+						<h5 class="text-primary text-uppercase mb-3">Premium</h5>
+						<h2 class="display-4 fw-bold mb-4">49€/Mese</h2>
+						<p class="text-muted mb-4">Ideale per chi cerca un'esperienza
+							completa</p>
+						<!-- Vantaggi -->
+						<ul class="list-unstyled feature-list mb-4"
+							style="color: rgb(0, 208, 2)">
+							<li>
+								<p><i class="fa-solid fa-check"></i>
+								Accesso a tutte le nostre sedi</p> 
+								<p><i class="fa-solid fa-check"></i>
+								Accesso Illimitato alla sala pesi</p>
+								<p><i class="fa-solid fa-check"></i>
+								1 Corso gratis incluso nel piano di abbonamento</p>
+								<p><i class="fa-solid fa-check"></i>
+								Nessun limite di ingressi</p>
+							</li>
+						</ul>
+						
+						<!-- Limiti -->
+						<ul class="list-unstyled feature-list mb-4"
+							style="color: rgb(255, 0, 0)">
+							<li>
+								<p><i class="fa-solid fa-x"></i>
+								Non puoi usufruire del Personal Trainer</p> 
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="pricing-card card h-100 p-4">
+					<div class="card-body text-center">
+						<h5 class="text-secondary text-uppercase mb-3">Gold</h5>
+						<h2 class="display-4 fw-bold mb-4">99€/Mese</h2>
+						<p class="text-muted mb-4">Per chi cerca il massimo grado di
+							personalizzazione</p>
+						<!-- Vantaggi -->
+						<ul class="list-unstyled feature-list mb-4"
+							style="color: rgb(0, 208, 2)">
+							<li>
+								<p><i class="fa-solid fa-check"></i>
+								Accesso a tutte le nostre sedi</p> 
+								<p><i class="fa-solid fa-check"></i>
+								Accesso Illimitato alla sala pesi</p>
+								<p><i class="fa-solid fa-check"></i>
+								1 Corso gratis incluso nel piano di abbonamento</p>
+								<p><i class="fa-solid fa-check"></i>
+								Nessun limite di ingressi</p>
+								<p><i class="fa-solid fa-check"></i>
+								Personal Trainer Incluso nel Piano di abbonamento</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-        <div class="col-md-4">
-            <div class="pricing-card card h-100 p-4">
-                <div class="card-body text-center">
-                    <h5 class="text-muted text-uppercase mb-3">Starter</h5>
-                    <h2 class="display-4 fw-bold mb-4">$19</h2>
-                    <p class="text-muted mb-4">Perfect for small businesses</p>
-                    <ul class="list-unstyled feature-list mb-4">
-                        <li>5 Team Members</li>
-                        <li>10GB Storage</li>
-                        <li>Basic Analytics</li>
-                        <li>Email Support</li>
-                    </ul>
-                    <button class="btn btn-custom text-white w-100">Get Started</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="pricing-card card h-100 p-4 border-2 border-primary">
-                <span class="badge bg-primary popular-badge">Popular</span>
-                <div class="card-body text-center">
-                    <h5 class="text-primary text-uppercase mb-3">Premium</h5>
-                    <h2 class="display-4 fw-bold mb-4">$49</h2>
-                    <p class="text-muted mb-4">Ideal for growing teams</p>
-                    <ul class="list-unstyled feature-list mb-4">
-                        <li>15 Team Members</li>
-                        <li>50GB Storage</li>
-                        <li>Advanced Analytics</li>
-                        <li>24/7 Support</li>
-                    </ul>
-                    <button class="btn btn-custom text-white w-100">Get Started</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="pricing-card card h-100 p-4">
-                <div class="card-body text-center">
-                    <h5 class="text-muted text-uppercase mb-3">Enterprise</h5>
-                    <h2 class="display-4 fw-bold mb-4">$99</h2>
-                    <p class="text-muted mb-4">For large organizations</p>
-                    <ul class="list-unstyled feature-list mb-4">
-                        <li>Unlimited Members</li>
-                        <li>500GB Storage</li>
-                        <li>Custom Analytics</li>
-                        <li>Priority Support</li>
-                    </ul>
-                    <button class="btn btn-custom text-white w-100">Get Started</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+	</div>
+	
+	<section class="content-section">
+		<div class="alert alert-warning" role="alert">
+  			<strong>Attenzione:</strong>
+  			<a>A seguito di varie richieste ti informiamo che, qualora tu scelga di seguire più corsi, solo quello meno costoso fra essi sarà incluso nel tuo Piano di Abbonamento,</a>
+  			<a>gli altri dovranno essere pagati separatamente nel tuo abbonamento</a>
+		</div>
+	</section>
+	
 	<!-- Footer-->
 	<footer class="footer text-center bg-secondary text-whit" id="footer">
 		<div class="container px-4 px-lg-5">
