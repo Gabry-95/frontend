@@ -11098,6 +11098,8 @@ footer.footer .social-link:hover {
   }
 }
 
+/*================================================================ AGGIUNTI =====================================================================*/
+
 .service-icon {
   background-color: #fff;
   color: #1D809F;
@@ -11108,3 +11110,168 @@ footer.footer .social-link:hover {
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
+
+#id {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.hero-testo {
+  flex: 1;
+}
+
+#carosello-1{
+	width: 400px;
+    height: auto; 
+	border-radius: 6px; /* opzionale: angoli arrotondati */
+	margin-left: 300px;
+	margin-right: 50px;
+	padding: 0;
+}
+
+#carosello-2{
+    margin-bottom:50px;
+}
+
+#carosello-2 .carousel-item img {
+    height: 600px; /* Cambia questo valore in base a quanto lo vuoi alto (es. 400px, 60vh, ecc.) */
+    object-fit: cover; /* Fondamentale: impedisce che le immagini si deformino */
+}
+
+.custom-slide-content {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 10%; /* Posiziona a sinistra con un po' di margine */
+    transform: translateY(-50%); /* Bilancia il centraggio verticale */
+    width: 80%; /* Occupa l'80% della larghezza */
+    max-width: 800px; /* Imposta una larghezza massima per evitare testi troppo lunghi su schermi grandi */
+    color: white;
+    text-align: left; /* Allinea il testo a sinistra */
+}
+
+/* gestione navbar*/
+
+.service-icon {
+  background-color: #fff;
+  color: #1D809F;
+  height: 7rem;
+  width: 7rem;
+  display: block;
+  line-height: 7.5rem;
+  font-size: 2.25rem;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 1. REGOLA PER LO SFONDO E LO SPAZIO DELLA NAVBAR */
+.navbar {
+    background-color: #F8F8FF; /* Imposta lo sfondo all'ottanio del sito.*/
+    padding-top: 3px;                    /* Aggiunge 10 pixel di spazio vuoto all'interno del bordo superiore della barra */
+    padding-bottom: 3px;                 /* Aggiunge 10 pixel di spazio vuoto all'interno del bordo inferiore della barra */
+    padding-left: 20px;                   /* Aggiunge 20 pixel di spazio vuoto interni sul lato sinistro per staccare i contenuti */
+    padding-right: 10px;                  /* Aggiunge 20 pixel di spazio vuoto interni sul lato destro per staccare i contenuti */   
+	height: 60px;
+}
+
+/* Seleziona direttamente il tag HTML <body> che esiste nella pagina. evitando che la navbar si compenetri*/ 
+body {
+    padding-top: 60px;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar-collapse {
+    align-items: center;
+}
+
+/* 2. REGOLA PER RIDIMENSIONARE E ALLINEARE IL LOGO */
+.logo-navbar{
+	display: flex;
+	align-items: center;
+    width: auto;                      
+    height: 80px;                        
+    padding-right: 50px;
+}
+
+/* 3. REGOLA PER LO STILE DI BASE DEI LINK  */
+.navbar-nav .nav-link, #areariservata {
+    color: #000000;            /* Colora il testo dei link di bianco per farlo risaltare sopra lo sfondo ottanio */
+    font-family: 'Source Sans Pro', sans-serif; /* Cambia il tipo di carattere applicando il font moderno 'Montserrat' */
+    font-size: 20px;                      /* Imposta l'altezza del testo dei link a 16 pixel */
+    font-weight: bold;                     /* Regola lo spessore del testo su una via di mezzo (semi-bold) per farlo leggere bene */
+    text-transform: uppercase;            /* Forza il browser a trasformare tutte le lettere dei link in MAIUSCOLO */
+    transition: color 0.3s ease;          /* Crea un'animazione fluida di 0.3 secondi quando il colore del testo cambia */
+	padding-right: 20px;
+}
+
+/* 4. EFFETTO HOVER: COSA SUCCEDE QUANDO PASSI IL MOUSE SOPRA I LINK */
+.navbar-nav .nav-link:hover, #areariservata:hover{
+    color: #eebf20 !important;            /* Cambia il colore del testo in giallo #eebf20 quando l'utente ci passa sopra il mouse */
+}
+
+/* 5. EFFETTO ACTIVE: COSA SUCCEDE AL LINK DELLA PAGINA IN CUI TI TROVI */
+.navbar-nav .nav-link.active {
+    color: #eebf20 !important;            /* Mantiene il testo colorato di giallo fisso per indicare visivamente la pagina corrente */
+}
+
+.col-lg-6, .mb-1, .mb-5, .btn.btn-primary.btn-xl, lead.mb-5, btn.btn-dark.btn-xl{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.admin{
+    width: 30px ;      /* Forza la larghezza a 30 pixel, ignorando i blocchi di Bootstrap */
+    max-width: 30px !important;  /* Impedisce all'immagine di superare i 30px in ogni caso */
+    height: auto !important;     /* Mantiene le proporzioni corrette dell'icona vettoriale */
+    display: inline-block;
+    margin-right: 12px !important; /* Forza 12 pixel di spazio tra l'omino e la scritta "Area riservata" */
+    display: flex;                 /* Allinea perfettamente l'omino in verticale */
+    align-items: center;    
+}
+
+.logo-admin{
+	display: flex;
+	align-items: center;
+    width: auto;                        /* Blocca la larghezza del logo a 35 pixel, tenendolo piccolo e proporzionato */
+    height: 30px;
+}
+
+/* PRICING CARDS*/
+
+.pricing-card {
+    transition: all 0.3s ease;
+    border: none;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-list li {
+    padding: 8px 0;
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: rotate(15deg);
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #6c5ce7, #a363d9);
+    border: none;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
