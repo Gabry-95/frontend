@@ -163,8 +163,7 @@
 	<section class="content-section">
 		<div class="alert alert-warning" role="alert">
   			<strong>Attenzione:</strong>
-  			<a>A seguito di varie richieste ti informiamo che, qualora tu scelga di seguire più corsi, solo quello meno costoso fra essi sarà incluso nel tuo Piano di Abbonamento,</a>
-  			<a>gli altri dovranno essere pagati separatamente nel tuo abbonamento</a>
+  			<a>A seguito di varie richieste ti informiamo che, qualora tu scelga di seguire più corsi, solo quello meno costoso fra essi sarà incluso nel tuo Piano di Abbonamento, gli altri dovranno essere pagati separatamente</a>
 		</div>
 	</section>
 	
