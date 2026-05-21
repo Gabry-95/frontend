@@ -61,7 +61,7 @@
 	</nav>
 
 	<!-- container piani di abbonamento -->
-	<div class="piani-abbonamento">
+	<div class="container py-5">
 		<div class="row justify-content-center g-4">
 			<div class="container px-4 px-lg-5 text-center">
 				<h1 class="mb-1">I nostri Piani di Abbonamento</h1>
@@ -101,7 +101,7 @@
 					<span class="badge bg-primary popular-badge">Popular</span>
 					<div class="card-body text-center">
 						<h5 class="text-primary text-uppercase mb-3">Premium</h5>
-						<h2 class="display-4 fw-bold mb-4">49€/Mese</h2>
+						<h2 class="display-4 fw-bold mb-4">60€/Mese</h2>
 						<p class="text-muted mb-4">Ideale per chi cerca un'esperienza
 							completa</p>
 						<!-- Vantaggi -->
@@ -135,7 +135,7 @@
 				<div class="pricing-card card h-100 p-4">
 					<div class="card-body text-center">
 						<h5 class="text-secondary text-uppercase mb-3">Gold</h5>
-						<h2 class="display-4 fw-bold mb-4">99€/Mese</h2>
+						<h2 class="display-4 fw-bold mb-4">90€/Mese</h2>
 						<p class="text-muted mb-4">Per chi cerca il massimo grado di
 							personalizzazione</p>
 						<!-- Vantaggi -->
@@ -160,8 +160,8 @@
 		</div>
 	</div>
 	
-	<section class="content-section">
-		<div class="alert alert-warning" role="alert">
+	<section class="content-section d-flex justify-content-center">
+		<div class="alert alert-warning rounded-3 shadow-sm" role="alert">
   			<strong>Attenzione:</strong>
   			<a>A seguito di varie richieste ti informiamo che, qualora tu scelga di seguire più corsi, solo quello meno costoso fra essi sarà incluso nel tuo Piano di Abbonamento, gli altri dovranno essere pagati separatamente</a>
 		</div>

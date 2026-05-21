@@ -175,7 +175,7 @@
 			</div>
 			<div class="row gx-0">
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="#about">
+					<a class="portfolio-item" href="/galleria.jsp">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Galleria</div>
