@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,20 +41,21 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link"
-						aria-current="page" href="/index.jsp#">HOME</a></li>
-					<li class="nav-item"><a class="nav-link" 
-					aria-current="page" href="/index.jsp#about">ABOUT</a></li>
-					<li class="nav-item"><a class="nav-link" 
-					aria-current="page" href="/index.jsp#portfolio">servizi</a></li>
-					<li class="nav-item"><a class="nav-link" 
-					aria-current="page" href="#footer">note legali &amp; social</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="/index.jsp#">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="/index.jsp#about">ABOUT</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="/index.jsp#portfolio">servizi</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="#footer">note legali &amp; social</a></li>
 				</ul>
 				<div class="d-flex align-items-center ms-auto">
 
 					<a class="admin"> <img src="assets/img/person.svg"
 						class="logo-admin">
-					</a> <a href="#" class="btn btn-personalizzato" id="areariservata">Area riservata</a>
+					</a> <a href="/areaRiservata.jsp" class="btn btn-personalizzato"
+						id="areariservata">Area riservata</a>
 				</div>
 			</div>
 		</div>
@@ -76,20 +77,26 @@
 						<ul class="list-unstyled feature-list mb-4"
 							style="color: rgb(0, 208, 2)">
 							<li>
-								<p><i class="fa-solid fa-check"></i>
-								Accesso a tutte le nostre sedi</p> 
-								<p><i class="fa-solid fa-check"></i>
-								Accesso Illimitato alla sala pesi</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Accesso a tutte le nostre
+									sedi
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Accesso Illimitato alla sala
+									pesi
+								</p>
 							</li>
 						</ul>
 						<!-- Limiti -->
 						<ul class="list-unstyled feature-list mb-4"
 							style="color: rgb(255, 0, 0)">
 							<li>
-								<p><i class="fa-solid fa-x"></i>
-								Non puoi Accedere ai nostri Corsi</p> 
-								<p><i class="fa-solid fa-x"></i>
-								Limite di 3 ingressi settimanali</p>
+								<p>
+									<i class="fa-solid fa-x"></i> Non puoi Accedere ai nostri Corsi
+								</p>
+								<p>
+									<i class="fa-solid fa-x"></i> Limite di 3 ingressi settimanali
+								</p>
 							</li>
 						</ul>
 					</div>
@@ -108,23 +115,32 @@
 						<ul class="list-unstyled feature-list mb-4"
 							style="color: rgb(0, 208, 2)">
 							<li>
-								<p><i class="fa-solid fa-check"></i>
-								Accesso a tutte le nostre sedi</p> 
-								<p><i class="fa-solid fa-check"></i>
-								Accesso Illimitato alla sala pesi</p>
-								<p><i class="fa-solid fa-check"></i>
-								1 Corso gratis incluso nel piano di abbonamento</p>
-								<p><i class="fa-solid fa-check"></i>
-								Nessun limite di ingressi</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Accesso a tutte le nostre
+									sedi
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Accesso Illimitato alla sala
+									pesi
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> 1 Corso gratis incluso nel
+									piano di abbonamento
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Nessun limite di ingressi
+								</p>
 							</li>
 						</ul>
-						
+
 						<!-- Limiti -->
 						<ul class="list-unstyled feature-list mb-4"
 							style="color: rgb(255, 0, 0)">
 							<li>
-								<p><i class="fa-solid fa-x"></i>
-								Non puoi usufruire del Personal Trainer</p> 
+								<p>
+									<i class="fa-solid fa-x"></i> Non puoi usufruire del Personal
+									Trainer
+								</p>
 							</li>
 						</ul>
 					</div>
@@ -142,16 +158,25 @@
 						<ul class="list-unstyled feature-list mb-4"
 							style="color: rgb(0, 208, 2)">
 							<li>
-								<p><i class="fa-solid fa-check"></i>
-								Accesso a tutte le nostre sedi</p> 
-								<p><i class="fa-solid fa-check"></i>
-								Accesso Illimitato alla sala pesi</p>
-								<p><i class="fa-solid fa-check"></i>
-								1 Corso gratis incluso nel piano di abbonamento</p>
-								<p><i class="fa-solid fa-check"></i>
-								Nessun limite di ingressi</p>
-								<p><i class="fa-solid fa-check"></i>
-								Personal Trainer Incluso nel Piano di abbonamento</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Accesso a tutte le nostre
+									sedi
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Accesso Illimitato alla sala
+									pesi
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> 1 Corso gratis incluso nel
+									piano di abbonamento
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Nessun limite di ingressi
+								</p>
+								<p>
+									<i class="fa-solid fa-check"></i> Personal Trainer Incluso nel
+									Piano di abbonamento
+								</p>
 							</li>
 						</ul>
 					</div>
@@ -159,34 +184,43 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<section class="content-section d-flex justify-content-center">
 		<div class="alert alert-warning rounded-3 shadow-sm" role="alert">
-  			<strong>Attenzione:</strong>
-  			<a>A seguito di varie richieste ti informiamo che, qualora tu scelga di seguire più corsi, solo quello meno costoso fra essi sarà incluso nel tuo Piano di Abbonamento, gli altri dovranno essere pagati separatamente</a>
+			<strong>Attenzione:</strong> <a>A seguito di varie richieste ti
+				informiamo che, qualora tu scelga di seguire più corsi, solo quello
+				meno costoso fra essi sarà incluso nel tuo Piano di Abbonamento, gli
+				altri dovranno essere pagati separatamente</a>
 		</div>
 	</section>
-	
+
 	<!-- Footer-->
 	<footer class="footer text-center bg-secondary text-whit" id="footer">
 		<div class="container px-4 px-lg-5">
 			<ul class="list-inline mb-5">
 				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3" href="https://www.instagram.com/mcfit_it/"><i
+					class="social-link rounded-circle text-white mr-3"
+					href="https://www.instagram.com/mcfit_it/"><i
 						class="icon-social-instagram"></i></a></li>
 				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3" href="https://www.youtube.com/user/HappyFitTv"><i
+					class="social-link rounded-circle text-white mr-3"
+					href="https://www.youtube.com/user/HappyFitTv"><i
 						class="icon-social-youtube"></i></a></li>
 				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white" href="https://github.com/Gabry-95/frontend"><i
+					class="social-link rounded-circle text-white"
+					href="https://github.com/Gabry-95/frontend"><i
 						class="icon-social-github"></i></a></li>
 			</ul>
-			<p class="text-muted small mb-0">Copyright &copy; Aurora Fitness S.r.l 2009 P.iva IT 185 786 214</p>
-			<br><p class="text-muted small mb-0">Sede legale: Piazza della Mostra 2, 39100 Bolzano &nbsp;&nbsp; Sede amministrativa: Viale Fulvio Testi 29, 20162 Milano</p>
-			
+			<p class="text-muted small mb-0">Copyright &copy; Aurora Fitness
+				S.r.l 2009 P.iva IT 185 786 214</p>
+			<br>
+			<p class="text-muted small mb-0">Sede legale: Piazza della Mostra
+				2, 39100 Bolzano &nbsp;&nbsp; Sede amministrativa: Viale Fulvio
+				Testi 29, 20162 Milano</p>
+
 		</div>
 	</footer>
-	
+
 	<!-- Bootstrap core JS-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -194,4 +228,3 @@
 	<script src="js/scripts.js"></script>
 </body>
 </html>
-    

@@ -57,7 +57,7 @@
 
 					<a class="admin"> <img src="assets/img/person.svg"
 						class="logo-admin">
-					</a> <a href="#" class="btn btn-personalizzato" id="areariservata">Area riservata</a>
+					</a> <a href="/areaRiservata.jsp" class="btn btn-personalizzato" id="areariservata">Area riservata</a>
 				</div>
 			</div>
 		</div>
