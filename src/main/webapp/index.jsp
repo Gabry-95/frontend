@@ -41,20 +41,21 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link"
-						aria-current="page" href="#">HOME</a></li>
-					<li class="nav-item"><a class="nav-link" 
-					aria-current="page" href="#about">ABOUT</a></li>
-					<li class="nav-item"><a class="nav-link" 
-					aria-current="page" href="#portfolio">servizi</a></li>
-					<li class="nav-item"><a class="nav-link" 
-					aria-current="page" href="#footer">note legali &amp; social</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="#">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="#about">ABOUT</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="#portfolio">servizi</a></li>
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						href="#footer">note legali &amp; social</a></li>
 				</ul>
 				<div class="d-flex align-items-center ms-auto">
 
 					<a class="admin"> <img src="assets/img/person.svg"
 						class="logo-admin">
-					</a> <a href="/areaRiservata.jsp" class="btn btn-personalizzato" id="areariservata">Area riservata</a>
+					</a> <a href="/areaRiservata.jsp" class="btn btn-personalizzato"
+						id="areariservata">Area riservata</a>
 				</div>
 			</div>
 		</div>
@@ -75,16 +76,24 @@
 	<section class="content-section bg-light" id="about">
 		<div class="container px-4 px-lg-5 text-center">
 			<div class="row gx-4 gx-lg-5 align-items-center">
-				
+
 				<!-- Colonna testo (sinistra) -->
 				<div class="hero-testo">
 					<h2>Da più di 10 anni al vostro servizio in tutta Italia!</h2>
 					<br>
-					<p class="lead mb-5">Benvenuto in Aurora Fitness, la catena di palestre dove il tuo percorso di benessere trova una nuova luce.
-					Nati con l'obiettivo di rivoluzionare il concetto tradizionale di allenamento, abbiamo creato uno spazio in cui l'energia incontra l'equilibrio.</p>
-					<p  class="lead mb-5">Il nome Aurora rappresenta la nostra filosofia: ogni giorno è una nuova opportunità per risvegliare il proprio potenziale, superare i propri limiti e rigenerarsi.
-					Che tu sia un atleta esperto o stia muovendo i tuoi primi passi verso uno stile di vita più sano, qui troverai l'ambiente ideale per brillare.</p>
-					<a class="btn btn-dark btn-xl" href="#portfolio">Scopri i Nostri Servizi</a>
+					<p class="lead mb-5">Benvenuto in Aurora Fitness, la catena di
+						palestre dove il tuo percorso di benessere trova una nuova luce.
+						Nati con l'obiettivo di rivoluzionare il concetto tradizionale di
+						allenamento, abbiamo creato uno spazio in cui l'energia incontra
+						l'equilibrio.</p>
+					<p class="lead mb-5">Il nome Aurora rappresenta la nostra
+						filosofia: ogni giorno è una nuova opportunità per risvegliare il
+						proprio potenziale, superare i propri limiti e rigenerarsi. Che tu
+						sia un atleta esperto o stia muovendo i tuoi primi passi verso uno
+						stile di vita più sano, qui troverai l'ambiente ideale per
+						brillare.</p>
+					<a class="btn btn-dark btn-xl" href="#portfolio">Scopri i
+						Nostri Servizi</a>
 				</div>
 
 				<!-- Colonna Carosello immagine (destra) -->
@@ -207,7 +216,7 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="#!">
+					<a class="portfolio-item" href="/sponsor.jsp">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Sponsor</div>
@@ -226,21 +235,28 @@
 		<div class="container px-4 px-lg-5">
 			<ul class="list-inline mb-5">
 				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3" href="https://www.instagram.com/mcfit_it/"><i
+					class="social-link rounded-circle text-white mr-3"
+					href="https://www.instagram.com/mcfit_it/"><i
 						class="icon-social-instagram"></i></a></li>
 				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3" href="https://www.youtube.com/user/HappyFitTv"><i
+					class="social-link rounded-circle text-white mr-3"
+					href="https://www.youtube.com/user/HappyFitTv"><i
 						class="icon-social-youtube"></i></a></li>
 				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white" href="https://github.com/Gabry-95/frontend"><i
+					class="social-link rounded-circle text-white"
+					href="https://github.com/Gabry-95/frontend"><i
 						class="icon-social-github"></i></a></li>
 			</ul>
-			<p class="text-muted small mb-0">Copyright &copy; Aurora Fitness S.r.l 2009 P.iva IT 185 786 214</p>
-			<br><p class="text-muted small mb-0">Sede legale: Piazza della Mostra 2, 39100 Bolzano &nbsp;&nbsp; Sede amministrativa: Viale Fulvio Testi 29, 20162 Milano</p>
-			
+			<p class="text-muted small mb-0">Copyright &copy; Aurora Fitness
+				S.r.l 2009 P.iva IT 185 786 214</p>
+			<br>
+			<p class="text-muted small mb-0">Sede legale: Piazza della Mostra
+				2, 39100 Bolzano &nbsp;&nbsp; Sede amministrativa: Viale Fulvio
+				Testi 29, 20162 Milano</p>
+
 		</div>
 	</footer>
-	
+
 	<!-- Bootstrap core JS-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

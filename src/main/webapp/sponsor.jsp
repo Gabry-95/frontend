@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Area Riservata</title>
+<title>Sponsor</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -54,71 +54,101 @@
 
 					<a class="admin"> <img src="assets/img/person.svg"
 						class="logo-admin">
-					</a> <a href="#" class="btn btn-personalizzato" id="areariservata">Area
-						riservata</a>
+					</a> <a href="/areaRiservata.jsp" class="btn btn-personalizzato"
+						id="areariservata">Area riservata</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 
-	<!--Login Page  -->
-	<link rel="stylesheet"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-		crossorigin="anonymous">
+	<section class="container my-5">
+		<div class="text-center mb-5">
+			<h2 class="fw-bold">I Nostri Partner</h2>
+			<p class="text-muted">Vantaggi esclusivi ed eccellenze scelte per
+				i membri di Aurora Fitness</p>
+		</div>
 
-	<section class="login">
-		<div class="login_box">
-			<div class="left">
-				<div class="top_link"></div>
-				<div class="contact">
-					<form action="Login" method="post" style="width: 100%;">
-						<h3>Area Riservata</h3>
+		<div class="row g-4">
 
-						<div class="input-group-custom" style="position: relative;">
-							<i class="fa-solid fa-user"
-								style="position: absolute; left: 5px; top: 22px; color: #4f30677d;"></i>
-							<input type="text" placeholder="USERNAME"
-								style="padding-left: 30px;">
-							<div class="invalid-feedback" data-sb-feedback="name:required">Username
-								errato.</div>
+			<div class="col-md-3">
+				<div class="card h-100 text-center border-0 shadow-sm p-4">
+					<div class="mb-3"
+						style="height: 80px; display: flex; align-items: center; justify-content: center;">
+						<div class="sponsor-img-container">
+							<img src="assets/img/atleta" alt="Prozis">
 						</div>
-
-						<div class="input-group-custom" style="position: relative;">
-							<i class="fa-solid fa-lock"
-								style="position: absolute; left: 5px; top: 22px; color: #4f30677d;"></i>
-							<input type="password" placeholder="PASSWORD"
-								style="padding-left: 30px;">
-							<div class="invalid-feedback" data-sb-feedback="name:required">Password
-								errata.</div>
-						</div>
-
-						<button class="submit">Accedi</button>
-					</form>
+					</div>
+					<div class="card-body p-0">
+					
+						<h5 class="card-title fw-bold">Prozis</h5>
+						<p class="card-text text-muted small">
+							Integrazione sportiva e alimentazione sana! per maggiori
+							informazioni visita: <a href="https://www.prozis.com/it/it"
+								target="_blank" style="color: #1a80aa; font-weight: 600;">
+								https://www.prozis.com/it/it </a>
+						</p>
+						<span class="badge text-white" style="background-color: #1a80aa;">SCONTO
+							15%</span>
+					</div>
 				</div>
 			</div>
-			<div class="right">
-				<div class="right-text">
-					<h2></h2>
-					<h5></h5>
-				</div>
-				<div class="right-inductor">
-					<!-- <img
-						src="assets/img/pesi_gialli.jpg"> -->
+
+			<div class="col-md-3">
+				<div class="card h-100 text-center border-0 shadow-sm p-4">
+					<div class="mb-3"
+						style="height: 80px; display: flex; align-items: center; justify-content: center;">
+						<img src="assets/img/sponsor/myprotein-logo.png" alt="MyProtein"
+							style="max-height: 100%; width: auto;">
+					</div>
+					<div class="card-body p-0">
+						<h5 class="card-title fw-bold">MyProtein</h5>
+						<p class="card-text text-muted small">Integratori e
+							abbigliamento per l'allenamento.</p>
+						<span class="badge text-white" style="background-color: #1a80aa;">SCONTO
+							10%</span>
+					</div>
 				</div>
 			</div>
+
+			<div class="col-md-3">
+				<div class="card h-100 text-center border-0 shadow-sm p-4">
+					<div class="mb-3"
+						style="height: 80px; display: flex; align-items: center; justify-content: center;">
+						<img src="assets/img/sponsor/nike-logo.png" alt="Nike"
+							style="max-height: 100%; width: auto;">
+					</div>
+					<div class="card-body p-0">
+						<h5 class="card-title fw-bold">Nike Sport</h5>
+						<p class="card-text text-muted small">Partner tecnico per
+							calzature e abbigliamento corsi.</p>
+						<span class="badge text-white" style="background-color: #1a80aa;">NOVITÀ
+							CAMPUS</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card h-100 text-center border-0 shadow-sm p-4">
+					<div class="mb-3"
+						style="height: 80px; display: flex; align-items: center; justify-content: center;">
+						<img src="assets/img/sponsor/nike-logo.png" alt="Nike"
+							style="max-height: 100%; width: auto;">
+					</div>
+					<div class="card-body p-0">
+						<h5 class="card-title fw-bold">Jordan</h5>
+						<p class="card-text text-muted small">Altro.</p>
+						<span class="badge text-white" style="background-color: #1a80aa;">Popular</span>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</section>
 
 
 
 
-
-
-
 	<!-- Footer-->
-	<footer class="footer text-center py-4" id="footer"
-		style="background-color: #eebf20;">
+	<footer class="footer text-center bg-secondary text-whit" id="footer">
 		<div class="container px-4 px-lg-5">
 			<ul class="list-inline mb-5">
 				<li class="list-inline-item"><a
@@ -150,7 +180,4 @@
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
 </body>
-
-
-
 </html>
