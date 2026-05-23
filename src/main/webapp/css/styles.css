@@ -12043,3 +12043,103 @@ Questo lo azzeriamo del tutto perché usiamo lo sfondo reale
 	transition: all 0.3s ease; /* Rende il cambio di colore fluido */
 }
 
+/* SPONSOR */
+
+
+/* 2. COME: Obbliga l'immagine a rispettare i confini */
+.sponsor-img-container img {
+    max-height: 100%;    /* Dice alla foto: "Non puoi essere più alta del tuo recinto (80px)" */
+    max-width: 100%;     /* Dice alla foto: "Non puoi allargarti oltre la larghezza della card" */
+    width: auto;         /* Mantiene intatte le proporzioni originali in larghezza */
+    height: auto;        /* Mantiene intatte le proporzioni originali in altezza */
+    object-fit: contain; /* 🌟 IL SEGRETO: Scala la foto armoniosamente senza mai distorcerla o tirarla */
+}
+
+a.sponsor-card, 
+a.sponsor-card:hover, 
+a.sponsor-card:focus {
+    text-decoration: none !important; /* Toglie la sottolineatura blu ovunque */
+    color: inherit !important;        /* Impedisce ai testi di diventare blu */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 30px !important;  
+    min-height: 540px;             
+    border-radius: 20px !important;
+    background: #ffffff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05) !important; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+     
+   
+}
+
+/* Disattiva la sottolineatura su qualsiasi elemento interno (trucco anti-bug per l'esame) */
+a.sponsor-card * {
+    text-decoration: none !important;
+}
+.sponsor-card p {
+    color: #6c757d !important;
+    font-size: 14px;
+    line-height: 1.6;
+    
+    /* 🌟 IL TRUCCO: Forza il paragrafo ad occupare sempre lo stesso spazio verticale */
+    min-height: 120px; 
+    
+    margin-bottom: 15px;
+}
+/* 2. 🌟 EFFETTO HOVER CON ALONE GIALLO */
+a.sponsor-card:hover {
+    transform: translateY(-8px);   
+    /* Cambiato in giallo acceso con opacità 0.7 per creare l'effetto lampadina */
+    box-shadow: 0 0 35px rgba(238, 191, 32, 0.7) !important; 
+}
+
+/* 3. IL CONTENITORE DEL LOGO (Altezza fissa direttamente qui) */
+.sponsor-img-container {
+    width: 100%;
+    height: 80px; /* Definiamo qui gli 80px di spazio per il logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    margin-bottom: 20px;
+}
+
+.sponsor-img-container img {
+    max-height: 100%;    
+    max-width: 100%;     
+    width: auto;         
+    height: auto;
+    object-fit: contain; 
+}
+
+/* 4. STRUTTURAZIONE DEI TESTI (Assegnati direttamente ai tag corretti) */
+.sponsor-card h4 {
+    color: #212529 !important;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.sponsor-card p.card-main-text {
+    color: #6c757d !important;
+    font-size: 14.5px;
+    line-height: 1.6;
+    min-height: 145px;    /* 🌟 AGGIUNGI QUESTO: costringe la descrizione a occupare lo stesso spazio in tutte le card */
+    margin-bottom: 25px;  /* Spazio tra il testo e il badge azzurro */
+}
+
+.sponsor-card .coupon-area {
+    color: #212529 !important;
+    font-size: 15px;
+    min-height: 65px;     /* 🌟 AGGIUNGI QUESTO: allinea i testi dei coupon (es. quello lungo di Under Armour) */
+    margin-top: 10px;
+}
+
+.sponsor-card .sponsor-link-footer {
+    color: #1a80aa !important; /* Azzurro del brand per l'azione in fondo */
+    font-weight: 600;
+    font-size: 13.5px;
+    margin-top: auto; /* Spinge il link sempre sul fondo della card */
+    padding-top: 15px;
+}
