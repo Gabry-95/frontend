@@ -205,7 +205,7 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="#!">
+					<a class="portfolio-item" href="/Palestre">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Cerca la palestra più vicina a te</div>
