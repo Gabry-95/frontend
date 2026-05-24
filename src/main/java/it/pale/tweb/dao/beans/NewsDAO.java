@@ -7,6 +7,8 @@ import java.util.Vector;
 import java.sql.Connection;
 import it.pale.tweb.dao.utils.DBManager;
 
+import it.pale.tweb.dao.beans.Palestra;
+
 
 public class NewsDAO {
 	private static Connection conn = null;
@@ -91,7 +93,7 @@ public class NewsDAO {
 	}
 
 	public Vector<News> getAll() {
-		String query = "SELECT * FROM News order by Id";
+		String query = "SELECT * FROM News order by data";
 
 		Vector<News> res = new Vector<News>();
 		PreparedStatement ps;
@@ -133,6 +135,28 @@ public class NewsDAO {
 		DBManager.closeConnection();
 		return esito;
 	}
+	
+	public Vector<News> getNews(Palestra p) {
+		String query = "SELECT * FROM News WHERE palestra=? order by data DESC";
 
+		Vector<News> res = new Vector<News>();
+		PreparedStatement ps;
+		conn = DBManager.startConnection();
+		try {
+			
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, p.getId());
+			
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				News news = recordToNews(rs);
+				res.add(news);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBManager.closeConnection();
+		return res;
+	}
 
 }

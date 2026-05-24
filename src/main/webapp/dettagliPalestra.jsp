@@ -1,9 +1,15 @@
+<%@page import="it.pale.tweb.dao.beans.News"%>
+<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
 <%@page import="it.pale.tweb.dao.beans.Palestra"%>
-<%@page import="it.pale.tweb.dao.beans.PalestraDAO"%>
+<%@page import="it.pale.tweb.dao.beans.Corso"%>
+<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>
+<%@page import="it.pale.tweb.dao.beans.Personal_trainer"%>
 <%@page import="java.util.Vector"%>
+<%@page import="it.pale.tweb.dao.utils.Utils"%>
+<%@page import="java.util.Date"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +37,15 @@
 <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
-	
+
 	<%
-	Vector<Palestra> palestre = (Vector<Palestra>)request.getAttribute("palestre");
+	long telefono = (long) request.getAttribute("telefono");
+	Vector<Corso> corsi= (Vector<Corso>)request.getAttribute("corsi");
+	Vector<Istruttore_sala> is= (Vector<Istruttore_sala>)request.getAttribute("is");
+	Vector<Personal_trainer> pt= (Vector<Personal_trainer>)request.getAttribute("pt");
+	Vector<News> news= (Vector<News>)request.getAttribute("news");
 	%>
-	
+
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container-fluid">
@@ -70,28 +80,116 @@
 		</div>
 	</nav>
 
-	<form action="/DettagliPalestra" method="post">
-		<div class="custom-select-container ">
-			<div class="container py-5 text-center ">
-				<h2 class="mb-1">Visualizza Le Nostre Sedi</h2>
-			</div>
-			<select name="idPalestra" class="custom-select">
+	<div class="container py-5">
+		<h3 class="mb-1">Numero di Telefono</h3>
+		<p><%=telefono%></p>
+		<br>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Costo</th>
+				</tr>
+			</thead>
+			<tbody>
 				<%
-				for (Palestra p : palestre) {
+				for (Corso c : corsi) {
 				%>
-				<option value="<%=p.getId()%>"><%=p.getCitta()%> ,
-					<%=p.getVia()%>
-				</option>
+				<tr>
+					<td><%=c.getId()%></td>
+					<td><%=c.getTipo()%></td>
+					<td><%=c.getNome()%></td>
+					<td><%=c.getCosto()%> €</td>
+				</tr>
 				<%
-				} 
+				}
 				%>
-			</select>
-		</div>
-		<div class="text-center">
-			<button class="btn btn-primary btn-xl" id="dettagli" type="submit">Visualizza Dettagli</button>
-		</div>
-	</form>
-
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container py-5">
+		<h3 class="mb-1">Istruttori di Sala</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Cognome</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				int k=0;
+				for (Istruttore_sala s : is) {
+					k++;
+				%>
+				<tr>
+					<td><%=k%></td>
+					<td><%=s.getNome()%></td>
+					<td><%=s.getCognome()%></td>
+				</tr>
+				<%
+				}
+				%>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container py-5">
+		<h3 class="mb-1">Personal Trainer</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Cognome</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				k=0;
+				for (Personal_trainer ptr : pt) {
+					k++;
+				%>
+				<tr>
+					<td><%=k%></td>
+					<td><%=ptr.getNome()%></td>
+					<td><%=ptr.getCognome()%></td>
+				</tr>
+				<%
+				}
+				%>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container py-5">
+		<h3 class="mb-1">Bacheca Notizie Palestra</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">Data</th>
+					<th scope="col">News</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				for (News n : news) {
+				%>
+				<tr>
+					<td><%=Utils.dateToString(n.getData())%></td>
+					<td><%=n.getTesto()%></td>
+				</tr>
+				<%
+				}
+				%>
+			</tbody>
+		</table>
+	</div>
+	
 	<!-- Footer-->
 		<footer class="footer text-center bg-secondary text-whit" id="footer">
 			<div class="container px-4 px-lg-5">
