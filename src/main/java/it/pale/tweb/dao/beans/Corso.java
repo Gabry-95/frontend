@@ -4,7 +4,6 @@ package it.pale.tweb.dao.beans;
 public class Corso {
 	private int id;
 	private String nome;
-	
 	private int costo;
 	private String tipo;
 	private int palestra;

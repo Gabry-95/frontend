@@ -10972,7 +10972,7 @@ html {
 }
 
 footer.footer {
-  padding-top: 5rem;
+  padding-top: 50px;
   padding-bottom: 5rem;
 }
 footer.footer .social-link {
@@ -11573,4 +11573,9 @@ a.sponsor-card:hover {
     box-shadow:
         0 0 0 4px rgba(13,110,253,0.2),
         0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* bottone */
+#dettagli{
+	margin-bottom: 50px;
 }
