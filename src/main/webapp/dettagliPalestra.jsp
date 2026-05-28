@@ -1,12 +1,12 @@
-<%@page import="it.pale.tweb.dao.beans.News"%>
-<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+
+<%@page import="it.pale.tweb.dao.beans.News"%>
+<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>	
 <%@page import="it.pale.tweb.dao.beans.Palestra"%>
 <%@page import="it.pale.tweb.dao.beans.Corso"%>
-<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>
 <%@page import="it.pale.tweb.dao.beans.Personal_trainer"%>
+<%@page import="it.pale.tweb.dao.oggetti.CorsoIstruttore"%>
 <%@page import="java.util.Vector"%>
 <%@page import="it.pale.tweb.dao.utils.Utils"%>
 <%@page import="java.util.Date"%>
@@ -44,6 +44,8 @@
 	Vector<Istruttore_sala> is= (Vector<Istruttore_sala>)request.getAttribute("is");
 	Vector<Personal_trainer> pt= (Vector<Personal_trainer>)request.getAttribute("pt");
 	Vector<News> news= (Vector<News>)request.getAttribute("news");
+	Vector<CorsoIstruttore> cis= (Vector<CorsoIstruttore>)request.getAttribute("cis");
+	
 	%>
 
 	<!-- Navigation-->
@@ -80,10 +82,14 @@
 		</div>
 	</nav>
 
-	<div class="container py-5">
+	<div class="container py-2">
 		<h3 class="mb-1">Numero di Telefono</h3>
 		<p><%=telefono%></p>
 		<br>
+	</div>
+	
+	<div class="container py-5">
+		<h3 class="mb-1">Corsi Disponibili</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -111,6 +117,36 @@
 	</div>
 	
 	<div class="container py-5">
+		<h3 class="mb-1">Istruttori Dei Corsi</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Cognome</th>
+					<th scope="col">Corso Insegnato</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				int k=0;
+				for (CorsoIstruttore ci : cis) {
+					k++;
+				%>
+				<tr>
+					<td><%=k%></td>
+					<td><%=ci.getIstruttore_corso().getNome()%></td>
+					<td><%=ci.getIstruttore_corso().getCognome()%></td>
+					<td><%=ci.getCorso().getNome()%></td>
+				</tr>
+				<%
+				}
+				%>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="container py-5">
 		<h3 class="mb-1">Istruttori di Sala</h3>
 		<table class="table table-striped">
 			<thead>
@@ -122,7 +158,7 @@
 			</thead>
 			<tbody>
 				<%
-				int k=0;
+				k=0;
 				for (Istruttore_sala s : is) {
 					k++;
 				%>
