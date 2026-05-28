@@ -28,38 +28,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<nav class="navbar navbar-expand-lg fixed-top">
-		<div class="container-fluid">
-			<a class="logo"> <img src="assets/img/logo.png"
-				class="logo-navbar">
-			</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-				aria-controls="navbarNavDropdown" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/index.jsp#">HOME</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/index.jsp#about">ABOUT</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/index.jsp#portfolio">servizi</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="#footer">note legali &amp; social</a></li>
-				</ul>
-				<div class="d-flex align-items-center ms-auto">
-
-					<a class="admin"> <img src="assets/img/person.svg"
-						class="logo-admin">
-					</a> <a href="/areaRiservata.jsp" class="btn btn-personalizzato"
-						id="areariservata">Area riservata</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<%@ include file="/Navbar.jsp"%>
 	<!--Sponsor:  -->
 	<section class="container my-5">
 		<div class="text-center mb-5">
@@ -238,207 +207,185 @@
 				</a>
 			</div>
 
-		
-				<div class="col-md-3">
-					<a
-						href="https://www.gymshark.com/?srsltid=AfmBOordAYmGKdwTlP0UgNawxgZgk1WU-KdiYc4LoTXsnJs_y1DymoQw"
-						target="_blank"
-						class="card h-100 text-center border-0 sponsor-card">
 
-						<div class="sponsor-img-container">
-							<img src="assets/img/gymshark_logo.jpg" alt="">
+			<div class="col-md-3">
+				<a
+					href="https://www.gymshark.com/?srsltid=AfmBOordAYmGKdwTlP0UgNawxgZgk1WU-KdiYc4LoTXsnJs_y1DymoQw"
+					target="_blank"
+					class="card h-100 text-center border-0 sponsor-card">
+
+					<div class="sponsor-img-container">
+						<img src="assets/img/gymshark_logo.jpg" alt="">
+					</div>
+
+					<div
+						class="card-body p-0 d-flex flex-column justify-content-between flex-grow-1">
+
+						<div>
+							<h4 class="fw-bold">Gymshark</h4>
+							<p class="card-main-text">Entra nella community che sta
+								rivoluzionando l'abbigliamento da palestra nel mondo. Capi
+								tecnici senza cuciture (Seamless) progettati per modellare le
+								forme, resistere agli allenamenti più intensi e farti sentire al
+								massimo della fiducia dentro e fuori la sala pesi!</p>
 						</div>
 
-						<div
-							class="card-body p-0 d-flex flex-column justify-content-between flex-grow-1">
-
-							<div>
-								<h4 class="fw-bold">Gymshark</h4>
-								<p class="card-main-text">Entra nella community che sta
-									rivoluzionando l'abbigliamento da palestra nel mondo. Capi
-									tecnici senza cuciture (Seamless) progettati per modellare le
-									forme, resistere agli allenamenti più intensi e farti sentire
-									al massimo della fiducia dentro e fuori la sala pesi!</p>
-							</div>
-
-							<div class="my-3">
-								<span class="badge text-white px-3 py-2 mb-2"
-									style="background-color: #1a80aa; font-size: 13px;">
-									NOVITA' </span>
-								<p class="coupon-area mb-0">
-									Salta la fila virtuale per i lanci più attesi dell'anno. <br> Codice: <strong>AURORAFIT</strong>
-								</p>
-							</div>
-
-							<div class="sponsor-link-footer">
-								<i class="fa-solid fa-link me-1"></i> <i
-									class="fa-solid fa-arrow-up-right-from-square me-1"
-									style="font-size: 11px;"></i> Visita prozis.com per attivare
-								l'offerta.
-							</div>
-
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3">
-					<a
-						href="https://www.underarmour.it/it-it/?r=https%3A%2F%2Fwww.google.com%2F"
-						target="_blank"
-						class="card h-100 text-center border-0 sponsor-card">
-
-						<div class="sponsor-img-container">
-							<img src="assets/img/underArmour_logo.jpg" alt="">
+						<div class="my-3">
+							<span class="badge text-white px-3 py-2 mb-2"
+								style="background-color: #1a80aa; font-size: 13px;">
+								NOVITA' </span>
+							<p class="coupon-area mb-0">
+								Salta la fila virtuale per i lanci più attesi dell'anno. <br>
+								Codice: <strong>AURORAFIT</strong>
+							</p>
 						</div>
 
-						<div
-							class="card-body p-0 d-flex flex-column justify-content-between flex-grow-1">
-
-							<div>
-								<h4 class="fw-bold">Under Armour</h4>
-								<p class="card-main-text">Non perdere tempo con tessuti
-									ordinari. Indossa l'ingegneria sportiva applicata
-									all'allenamento: capi che respingono il sudore, mantengono la
-									temperatura muscolare ideale e assecondano ogni movimento
-									durante i circuiti più duri</p>
-							</div>
-
-							<div class="my-3">
-								<span class="badge text-white px-3 py-2 mb-2"
-									style="background-color: #1a80aa; font-size: 13px;">
-									SERVIZIO "TRY BEFORE YOU BUY" </span>
-								<p class="coupon-area mb-0">
-									Ordina i tuoi capi tecnici preferiti, provali a casa per 7
-									giorni e paga solo quello che decidi di tenere, con reso
-									gratuito.<br> Codice: <strong>AURORAFIT</strong>
-								</p>
-							</div>
-
-							<div class="sponsor-link-footer">
-								<i class="fa-solid fa-link me-1"></i> <i
-									class="fa-solid fa-arrow-up-right-from-square me-1"
-									style="font-size: 11px;"></i> Visita underarmor.com per
-								attivare l'offerta.
-							</div>
-
-						</div>
-					</a>
-				</div>
-
-				<div class="col-md-3">
-					<a
-						href="https://gorillamind.com/?srsltid=AfmBOoqU54P7pRt6r8Nva6-O4m9lI2nsTTvgpZQuhXONffVTIhOxMan9"
-						target="_blank"
-						class="card h-100 text-center border-0 sponsor-card">
-
-						<div class="sponsor-img-container">
-							<img src="assets/img/GorillaMind.jpg" alt="">
+						<div class="sponsor-link-footer">
+							<i class="fa-solid fa-link me-1"></i> <i
+								class="fa-solid fa-arrow-up-right-from-square me-1"
+								style="font-size: 11px;"></i> Visita prozis.com per attivare
+							l'offerta.
 						</div>
 
-						<div
-							class="card-body p-0 d-flex flex-column justify-content-start flex-grow-1">
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a
+					href="https://www.underarmour.it/it-it/?r=https%3A%2F%2Fwww.google.com%2F"
+					target="_blank"
+					class="card h-100 text-center border-0 sponsor-card">
 
-							<div>
-								<h4 class="fw-bold">Gorilla Mind</h4>
-								<p class="card-main-text">Sperimenta il pre-workout che ha
-									ridefinito gli standard dell'industria. Niente miscele
-									proprietarie segrete, ma dosaggi massicci e trasparenti di
-									L-Citrullina, Glicerolo e Nootropi. Progettato per chi esige
-									una connessione mente-muscolo d'acciaio e una potenza esplosiva
-									in ogni singola ripetizione!</p>
-							</div>
+					<div class="sponsor-img-container">
+						<img src="assets/img/underArmour_logo.jpg" alt="">
+					</div>
 
-							<div class="my-3">
-								<span class="badge text-white px-3 py-2 mb-2"
-									style="background-color: #1a80aa; font-size: 13px;">
+					<div
+						class="card-body p-0 d-flex flex-column justify-content-between flex-grow-1">
 
-									SPEDIZIONE GRATUITA</span>
-								<p class="coupon-area mb-0">
-									Per ordini superiori a 19.99€ la spedizione è gratuita!<br> Codice: <strong>AURORAFIT</strong>
-								</p>
-							</div>
-
-							<div class="sponsor-link-footer">
-								<i class="fa-solid fa-link me-1"></i> <i
-									class="fa-solid fa-arrow-up-right-from-square me-1"
-									style="font-size: 11px;"></i> Visita gorillamind.com per
-								attivare l'offerta.
-							</div>
-
-						</div>
-					</a>
-				</div>
-
-				<div class="col-md-3">
-					<a href="https://www.bulk.com/it/" target="_blank"
-						class="card h-100 text-center border-0 sponsor-card">
-
-						<div class="sponsor-img-container">
-							<img src="assets/img/bulk_logo.jpg" alt="">
+						<div>
+							<h4 class="fw-bold">Under Armour</h4>
+							<p class="card-main-text">Non perdere tempo con tessuti
+								ordinari. Indossa l'ingegneria sportiva applicata
+								all'allenamento: capi che respingono il sudore, mantengono la
+								temperatura muscolare ideale e assecondano ogni movimento
+								durante i circuiti più duri</p>
 						</div>
 
-						<div
-							class="card-body p-0 d-flex flex-column justify-content-start flex-grow-1">
-
-							<div>
-								<h4 class="fw-bold">Bulk</h4>
-								<p class="card-main-text">Dai grandi classici per la massa
-									ai cibi biologici, fino alle linee vegane con ingredienti puri
-									al 100%. Sostieni la tua alimentazione con prodotti di alta
-									qualità studiati per chi si allena</p>
-							</div>
-
-							<div class="my-3">
-								<span class="badge text-white px-3 py-2 mb-2"
-									style="background-color: #1a80aa; font-size: 13px;">
-
-									RICETTARIO FIT DIGITAL OMAGGIO</span>
-								<p class="coupon-area mb-0">
-									Scarica gratis l'ebook esclusivo con 50 ricette proteiche e
-									bilanciate per i tuoi spuntini quotidiani.<br> Codice: <strong>AURORAFIT</strong>
-								</p>
-							</div>
-
-							<div class="sponsor-link-footer">
-								<i class="fa-solid fa-link me-1"></i> <i
-									class="fa-solid fa-arrow-up-right-from-square me-1"
-									style="font-size: 11px;"></i> Visita bulk.com per attivare
-								l'offerta.
-							</div>
-
+						<div class="my-3">
+							<span class="badge text-white px-3 py-2 mb-2"
+								style="background-color: #1a80aa; font-size: 13px;">
+								SERVIZIO "TRY BEFORE YOU BUY" </span>
+							<p class="coupon-area mb-0">
+								Ordina i tuoi capi tecnici preferiti, provali a casa per 7
+								giorni e paga solo quello che decidi di tenere, con reso
+								gratuito.<br> Codice: <strong>AURORAFIT</strong>
+							</p>
 						</div>
-					</a>
-				</div>
+
+						<div class="sponsor-link-footer">
+							<i class="fa-solid fa-link me-1"></i> <i
+								class="fa-solid fa-arrow-up-right-from-square me-1"
+								style="font-size: 11px;"></i> Visita underarmor.com per attivare
+							l'offerta.
+						</div>
+
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-3">
+				<a
+					href="https://gorillamind.com/?srsltid=AfmBOoqU54P7pRt6r8Nva6-O4m9lI2nsTTvgpZQuhXONffVTIhOxMan9"
+					target="_blank"
+					class="card h-100 text-center border-0 sponsor-card">
+
+					<div class="sponsor-img-container">
+						<img src="assets/img/GorillaMind.jpg" alt="">
+					</div>
+
+					<div
+						class="card-body p-0 d-flex flex-column justify-content-start flex-grow-1">
+
+						<div>
+							<h4 class="fw-bold">Gorilla Mind</h4>
+							<p class="card-main-text">Sperimenta il pre-workout che ha
+								ridefinito gli standard dell'industria. Niente miscele
+								proprietarie segrete, ma dosaggi massicci e trasparenti di
+								L-Citrullina, Glicerolo e Nootropi. Progettato per chi esige una
+								connessione mente-muscolo d'acciaio e una potenza esplosiva in
+								ogni singola ripetizione!</p>
+						</div>
+
+						<div class="my-3">
+							<span class="badge text-white px-3 py-2 mb-2"
+								style="background-color: #1a80aa; font-size: 13px;">
+
+								SPEDIZIONE GRATUITA</span>
+							<p class="coupon-area mb-0">
+								Per ordini superiori a 19.99€ la spedizione è gratuita!<br>
+								Codice: <strong>AURORAFIT</strong>
+							</p>
+						</div>
+
+						<div class="sponsor-link-footer">
+							<i class="fa-solid fa-link me-1"></i> <i
+								class="fa-solid fa-arrow-up-right-from-square me-1"
+								style="font-size: 11px;"></i> Visita gorillamind.com per
+							attivare l'offerta.
+						</div>
+
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-3">
+				<a href="https://www.bulk.com/it/" target="_blank"
+					class="card h-100 text-center border-0 sponsor-card">
+
+					<div class="sponsor-img-container">
+						<img src="assets/img/bulk_logo.jpg" alt="">
+					</div>
+
+					<div
+						class="card-body p-0 d-flex flex-column justify-content-start flex-grow-1">
+
+						<div>
+							<h4 class="fw-bold">Bulk</h4>
+							<p class="card-main-text">Dai grandi classici per la massa ai
+								cibi biologici, fino alle linee vegane con ingredienti puri al
+								100%. Sostieni la tua alimentazione con prodotti di alta qualità
+								studiati per chi si allena</p>
+						</div>
+
+						<div class="my-3">
+							<span class="badge text-white px-3 py-2 mb-2"
+								style="background-color: #1a80aa; font-size: 13px;">
+
+								RICETTARIO FIT DIGITAL OMAGGIO</span>
+							<p class="coupon-area mb-0">
+								Scarica gratis l'ebook esclusivo con 50 ricette proteiche e
+								bilanciate per i tuoi spuntini quotidiani.<br> Codice: <strong>AURORAFIT</strong>
+							</p>
+						</div>
+
+						<div class="sponsor-link-footer">
+							<i class="fa-solid fa-link me-1"></i> <i
+								class="fa-solid fa-arrow-up-right-from-square me-1"
+								style="font-size: 11px;"></i> Visita bulk.com per attivare
+							l'offerta.
+						</div>
+
+					</div>
+				</a>
+			</div>
 	</section>
 
 
 
 
 	<!-- Footer-->
-	<footer class="footer text-center bg-secondary text-whit" id="footer">
-		<div class="container px-4 px-lg-5">
-			<ul class="list-inline mb-5">
-				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3"
-					href="https://www.instagram.com/mcfit_it/"><i
-						class="icon-social-instagram"></i></a></li>
-				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3"
-					href="https://www.youtube.com/user/HappyFitTv"><i
-						class="icon-social-youtube"></i></a></li>
-				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white"
-					href="https://github.com/Gabry-95/frontend"><i
-						class="icon-social-github"></i></a></li>
-			</ul>
-			<p class="text-muted small mb-0">Copyright &copy; Aurora Fitness
-				S.r.l 2009 P.iva IT 185 786 214</p>
-			<br>
-			<p class="text-muted small mb-0">Sede legale: Piazza della Mostra
-				2, 39100 Bolzano &nbsp;&nbsp; Sede amministrativa: Viale Fulvio
-				Testi 29, 20162 Milano</p>
-
-		</div>
-	</footer>
+	<%@ include file="/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script
