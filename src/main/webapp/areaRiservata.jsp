@@ -28,38 +28,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<nav class="navbar navbar-expand-lg fixed-top">
-		<div class="container-fluid">
-			<a class="logo"> <img src="assets/img/logo.png"
-				class="logo-navbar">
-			</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-				aria-controls="navbarNavDropdown" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/index.jsp#">HOME</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/index.jsp#about">ABOUT</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="/index.jsp#portfolio">servizi</a></li>
-					<li class="nav-item"><a class="nav-link" aria-current="page"
-						href="#footer">note legali &amp; social</a></li>
-				</ul>
-				<div class="d-flex align-items-center ms-auto">
-
-					<a class="admin"> <img src="assets/img/person.svg"
-						class="logo-admin">
-					</a> <a href="#" class="btn btn-personalizzato" id="areariservata">Area
-						riservata</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<%@ include file="/Navbar.jsp"%>
 
 	<!--Login Page  -->
 	<link rel="stylesheet"
@@ -72,13 +41,13 @@
 			<div class="left">
 				<div class="top_link"></div>
 				<div class="contact">
-					<form action="Login" method="post" style="width: 100%;">
+					<form action="Login" method="post" style="width: 100%;"> 
 						<h3>Area Riservata</h3>
 
 						<div class="input-group-custom" style="position: relative;">
 							<i class="fa-solid fa-user"
 								style="position: absolute; left: 5px; top: 22px; color: #4f30677d;"></i>
-							<input type="text" placeholder="USERNAME"
+							<input type="text" name=username placeholder="USERNAME"
 								style="padding-left: 30px;">
 							<div class="invalid-feedback" data-sb-feedback="name:required">Username
 								errato.</div>
@@ -87,7 +56,7 @@
 						<div class="input-group-custom" style="position: relative;">
 							<i class="fa-solid fa-lock"
 								style="position: absolute; left: 5px; top: 22px; color: #4f30677d;"></i>
-							<input type="password" placeholder="PASSWORD"
+							<input type="password" name=password placeholder="PASSWORD"
 								style="padding-left: 30px;">
 							<div class="invalid-feedback" data-sb-feedback="name:required">Password
 								errata.</div>
@@ -103,46 +72,19 @@
 					<h5></h5>
 				</div>
 				<div class="right-inductor">
-					<!-- <img
-						src="assets/img/pesi_gialli.jpg"> -->
+					
 				</div>
 			</div>
 		</div>
 	</section>
 
 
-
-
-
-
-
 	<!-- Footer-->
-	<footer class="footer text-center py-4" id="footer"
-		style="background-color: #eebf20;">
-		<div class="container px-4 px-lg-5">
-			<ul class="list-inline mb-5">
-				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3"
-					href="https://www.instagram.com/mcfit_it/"><i
-						class="icon-social-instagram"></i></a></li>
-				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white mr-3"
-					href="https://www.youtube.com/user/HappyFitTv"><i
-						class="icon-social-youtube"></i></a></li>
-				<li class="list-inline-item"><a
-					class="social-link rounded-circle text-white"
-					href="https://github.com/Gabry-95/frontend"><i
-						class="icon-social-github"></i></a></li>
-			</ul>
-			<p class="text-muted small mb-0">Copyright &copy; Aurora Fitness
-				S.r.l 2009 P.iva IT 185 786 214</p>
-			<br>
-			<p class="text-muted small mb-0">Sede legale: Piazza della Mostra
-				2, 39100 Bolzano &nbsp;&nbsp; Sede amministrativa: Viale Fulvio
-				Testi 29, 20162 Milano</p>
+	<%@ include file="/Footer.jsp"%>
 
-		</div>
-	</footer>
+
+
+
 
 	<!-- Bootstrap core JS-->
 	<script

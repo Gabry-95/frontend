@@ -11258,14 +11258,18 @@ body {
 /* PRICING CARDS*/
 .pricing-card {
 	transition: all 0.3s ease;
-	border: none;
+	
 	background: linear-gradient(145deg, #ffffff, #f5f5f5);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+	border-radius: 20px !important;
 }
 
 .pricing-card:hover {
 	transform: translateY(-10px);
-	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+	 /* Cambiato in giallo acceso con opacità 0.7 per creare l'effetto lampadina */
+    box-shadow: 0 0 35px rgba(238, 191, 32, 0.7) ; 
+
+	
 }
 
 .feature-list li {

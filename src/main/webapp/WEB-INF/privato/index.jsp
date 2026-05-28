@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<%@page import="it.pale.tweb.dao.beans.Palestra"%>
-<%@page import="it.pale.tweb.dao.beans.PalestraDAO"%>
-<%@page import="java.util.Vector"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,35 +27,20 @@
 </head>
 <body id="page-top">
 
-	<%
-	Vector<Palestra> palestre = (Vector<Palestra>)request.getAttribute("palestre");
-	%>
-
 	<!-- Navigation-->
 	<%@ include file="/Navbar.jsp"%>
+	<!-- Header-->
+	<header class="masthead d-flex align-items-center">
+		<div class="container px-4 px-lg-5 text-center">
+			<h1 class="mb-1">AREA RISERVATA</h1>
+			<h3 class="mb-5">
+				<em></em>
+			</h3>
+			<a class="btn btn-primary btn-xl" href="#about">Scopri di più</a>
+		</div>
+	</header>
 
-	<form action="/DettagliPalestra" method="post">
-		<div class="custom-select-container ">
-			<div class="container py-5 text-center ">
-				<h2 class="mb-1">Visualizza Le Nostre Sedi</h2>
-			</div>
-			<select name="idPalestra" class="custom-select">
-				<%
-				for (Palestra p : palestre) {
-				%>
-				<option value="<%=p.getId()%>"><%=p.getCitta()%> ,
-					<%=p.getVia()%>
-				</option>
-				<%
-				} 
-				%>
-			</select>
-		</div>
-		<div class="text-center">
-			<button class="btn btn-primary btn-xl" id="dettagli" type="submit">Visualizza
-				Dettagli</button>
-		</div>
-	</form>
+
 
 	<!-- Footer-->
 	<%@ include file="/Footer.jsp"%>
