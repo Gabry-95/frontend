@@ -18,6 +18,9 @@ import it.pale.tweb.dao.beans.Personal_trainer;
 import it.pale.tweb.dao.beans.Personal_trainerDAO;
 import it.pale.tweb.dao.beans.News;
 import it.pale.tweb.dao.beans.NewsDAO;
+import it.pale.tweb.dao.oggetti.CorsoIstruttore;
+import it.pale.tweb.dao.oggetti.CorsoIstruttoreDAO;
+
 
 
 /**
@@ -55,6 +58,8 @@ public class DettagliPalestra extends HttpServlet {
 		Vector<Personal_trainer> pt= new Vector<Personal_trainer>();
 		NewsDAO newsDAO= new NewsDAO();
 		Vector<News> news= new Vector<News>();
+		CorsoIstruttoreDAO ciDAO= new CorsoIstruttoreDAO();
+		Vector<CorsoIstruttore> cis= new Vector<CorsoIstruttore>();
 		
 		p.setId(id);
 		
@@ -63,6 +68,7 @@ public class DettagliPalestra extends HttpServlet {
 		is=isDAO.elencoIS(p);
 		pt=ptDAO.elencoPT(p);
 		news=newsDAO.getNews(p);
+		cis=ciDAO.ListaCorsoIstruttore(p);
 		
 		//Output
 		request.setAttribute("telefono", telefono);
@@ -70,6 +76,7 @@ public class DettagliPalestra extends HttpServlet {
 		request.setAttribute("is", is);
 		request.setAttribute("pt", pt);
 		request.setAttribute("news", news);
+		request.setAttribute("cis", cis);
 		
 		//view
 		request.getRequestDispatcher("dettagliPalestra.jsp").forward(request, response);
