@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Vector;
+import java.net.URLEncoder; 
 
 import it.pale.tweb.dao.beans.PalestraDAO;
 import it.pale.tweb.dao.beans.Palestra;
@@ -62,8 +63,11 @@ public class DettagliPalestra extends HttpServlet {
 		Vector<CorsoIstruttore> cis= new Vector<CorsoIstruttore>();
 		
 		p.setId(id);
-		
 		long telefono = pDAO.telefono(p);
+		p=pDAO.get(p);
+		String indirizzo=p.getVia()+", "+p.getCivico()+", "+p.getCap()+" "+p.getCitta();
+		String indirizzoEncoded = URLEncoder.encode(indirizzo, "UTF-8");
+		
 		corsi=cDAO.getCorso(p);
 		is=isDAO.elencoIS(p);
 		pt=ptDAO.elencoPT(p);
@@ -71,6 +75,7 @@ public class DettagliPalestra extends HttpServlet {
 		cis=ciDAO.ListaCorsoIstruttore(p);
 		
 		//Output
+		request.setAttribute("indirizzoEncoded", indirizzoEncoded);
 		request.setAttribute("telefono", telefono);
 		request.setAttribute("corsi", corsi);
 		request.setAttribute("is", is);

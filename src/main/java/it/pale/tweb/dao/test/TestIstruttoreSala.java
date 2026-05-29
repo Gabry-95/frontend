@@ -54,12 +54,12 @@ public class TestIstruttoreSala {
 //		
 		//DATA UNA PALESTRA RESTITUIRE TUTTI I NUMERI DI TELEONO DEI DIPENDENDETI CON NOME E COGNOME
 				Palestra palestra= new Palestra ();
-				palestra.setId(3);
-				Vector<Istruttore_sala> telefono= istruttoreDAO.getTelefonoIS(palestra);
-				for (Istruttore_sala t: telefono) {
-					System.out.println("Numero di telefono " +t.getTelefono() + " Nome :" +t.getNome() + " Cognome :" + t.getCognome());
-					}
-		
+//				palestra.setId(3);
+//				Vector<Istruttore_sala> telefono= istruttoreDAO.getTelefonoIS(palestra);
+//				for (Istruttore_sala t: telefono) {
+//					System.out.println("Numero di telefono " +t.getTelefono() + " Nome :" +t.getNome() + " Cognome :" + t.getCognome());
+//					}
+//		
 		
 		
 		

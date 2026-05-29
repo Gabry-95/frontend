@@ -41,19 +41,42 @@
 <body id="page-top">
 
 	<%
+	String indirizzoEncoded=(String)request.getAttribute("indirizzoEncoded");
 	long telefono = (long) request.getAttribute("telefono");
 	Vector<Corso> corsi= (Vector<Corso>)request.getAttribute("corsi");
 	Vector<Istruttore_sala> is= (Vector<Istruttore_sala>)request.getAttribute("is");
 	Vector<Personal_trainer> pt= (Vector<Personal_trainer>)request.getAttribute("pt");
 	Vector<News> news= (Vector<News>)request.getAttribute("news");
 	Vector<CorsoIstruttore> cis= (Vector<CorsoIstruttore>)request.getAttribute("cis");
-	
 	%>
 
 	<!-- Navigation-->
 	<%@ include file="/Navbar.jsp"%>
 
-	<div class="container py-2">
+	<div class="map" id="contact">
+		<iframe
+			src="https://maps.google.com/maps?f=q
+        &source=s_q
+        &hl=it
+        &q=<%=indirizzoEncoded%>
+        &ie=UTF8
+        &t=m
+        &z=15
+        &output=embed">
+		</iframe>
+		<br /> <small> <a
+			href="https://maps.google.com/maps?f=q
+            &source=embed
+            &hl=it
+            &q=<%=indirizzoEncoded%>
+            &ie=UTF8
+            &t=m
+            &z=15">
+				Visualizza su Google Maps </a>
+		</small>
+	</div>
+
+	<div class="container py-5">
 		<h3 class="mb-1">Numero di Telefono</h3>
 		<p><%=telefono%></p>
 		<br>
@@ -68,17 +91,21 @@
 					<th scope="col">Nome</th>
 					<th scope="col">Tipo</th>
 					<th scope="col">Costo</th>
+					<th scope="col">ID Corso</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
+				int k=0;
 				for (Corso c : corsi) {
+					k++;
 				%>
 				<tr>
-					<td><%=c.getId()%></td>
+					<td><%=k%></td>
 					<td><%=c.getTipo()%></td>
 					<td><%=c.getNome()%></td>
 					<td><%=c.getCosto()%> €</td>
+					<td><%=c.getId()%></td>
 				</tr>
 				<%
 				}
@@ -100,7 +127,7 @@
 			</thead>
 			<tbody>
 				<%
-				int k=0;
+				k=0;
 				for (CorsoIstruttore ci : cis) {
 					k++;
 				%>
