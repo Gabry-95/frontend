@@ -41,7 +41,7 @@
 	</header>
 
 	<!-- About-->
-	<section class="content-section bg-light" id="about">
+	<section class="content-section" id="about">
 		<div class="container px-4 px-lg-5 text-center">
 			<div class="row gx-4 gx-lg-5 align-items-center">
 
