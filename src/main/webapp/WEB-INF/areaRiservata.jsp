@@ -28,7 +28,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
+	<%@ include file="/WEB-INF/Navbar.jsp"%>
 
 	<!--Login Page  -->
 	<link rel="stylesheet"
@@ -80,7 +80,7 @@
 
 
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 
 

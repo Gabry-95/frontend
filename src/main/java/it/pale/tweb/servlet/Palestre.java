@@ -39,7 +39,7 @@ public class Palestre extends HttpServlet {
 		//output
 		request.setAttribute("palestre", palestre);
 		
-		request.getRequestDispatcher("/palestre.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/palestre.jsp").forward(request, response);
 		
 	}
 

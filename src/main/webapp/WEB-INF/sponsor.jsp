@@ -28,7 +28,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
+	<%@ include file="/WEB-INF/Navbar.jsp"%>
 	<!--Sponsor:  -->
 	<section class="container my-5">
 		<div class="text-center mb-5">
@@ -385,7 +385,7 @@
 
 
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script
