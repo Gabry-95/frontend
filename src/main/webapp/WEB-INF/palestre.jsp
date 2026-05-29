@@ -37,7 +37,7 @@
 	%>
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
+	<%@ include file="/WEB-INF/Navbar.jsp"%>
 
 	<form action="/DettagliPalestra" method="post">
 		<div class="custom-select-container ">
@@ -63,7 +63,7 @@
 	</form>
 
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script

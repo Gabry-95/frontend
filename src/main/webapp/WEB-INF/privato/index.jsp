@@ -28,22 +28,68 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
-	<!-- Header-->
-	<header class="masthead d-flex align-items-center">
-		<div class="container px-4 px-lg-5 text-center">
-			<h1 class="mb-1">AREA RISERVATA</h1>
-			<h3 class="mb-5">
-				<em></em>
-			</h3>
-			<a class="btn btn-primary btn-xl" href="#about">Scopri di più</a>
+	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
+
+	<% int palestra=(int)session.getAttribute("Palestra"); %>
+	
+	<p>Palestra: <%=palestra %></p>
+	
+	<!-- Portfolio-->
+	<section class="content-section" id="portfolio">
+		<div class="container px-4 px-lg-5">
+			<div class="content-section-heading text-center">
+				<h2 class="mb-5">Funzionalita' Amministrazione</h2>
+			</div>
+			<div class="row gx-0">
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="Galleria">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Galleria</div>
+								<p class="mb-0">Non credi a ciò che diciamo? Dai un occhiata
+									tu stesso!</p>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port1.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="Abbonamenti">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Abbonamenti</div>
+								<p class="mb-0">Visualizza i nostri piani di abbonamento</p>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="Palestre">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Cerca la palestra più vicina a te</div>
+								<p class="mb-0">Visualizza le informazioni e i servizi
+									offerti dalla sede a te più comoda</p>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port3.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="Sponsor">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Sponsor</div>
+								<p class="mb-0">Scopri le storie di chi ha creduto nella
+									nostra mission</p>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
+					</a>
+				</div>
+			</div>
 		</div>
-	</header>
-
-
-
+	</section>
+	
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script

@@ -92,7 +92,7 @@ public class DettagliPalestra extends HttpServlet {
 		request.setAttribute("numIscritti", numIscritti);
 		
 		//view
-		request.getRequestDispatcher("dettagliPalestra.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/dettagliPalestra.jsp").forward(request, response);
 		
 	}
 

@@ -31,7 +31,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
+	<%@ include file="/WEB-INF/Navbar.jsp"%>
 
 	<div class="container py-5">
 		<main role="main" class="inner cover" style="padding: 30px">
@@ -78,7 +78,7 @@
 
 
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script

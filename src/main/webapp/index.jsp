@@ -28,7 +28,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
+	<%@ include file="/WEB-INF/Navbar.jsp"%>
 	<!-- Header-->
 	<header class="masthead d-flex align-items-center">
 		<div class="container px-4 px-lg-5 text-center">
@@ -199,7 +199,7 @@
 	</section>
 
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script

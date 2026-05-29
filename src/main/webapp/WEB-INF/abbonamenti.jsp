@@ -28,7 +28,7 @@
 <body id="page-top">
 
 	<!-- Navigation-->
-	       <%@ include file = "/Navbar.jsp" %>
+	       <%@ include file = "/WEB-INF/Navbar.jsp" %>
 
 	<!-- container piani di abbonamento -->
 	<div class="container py-5">
@@ -164,7 +164,7 @@
 	</section>
 
 	<!-- Footer-->
-	<%@ include file = "/Footer.jsp" %>
+	<%@ include file = "/WEB-INF/Footer.jsp" %>
 
 	<!-- Bootstrap core JS-->
 	<script

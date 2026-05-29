@@ -5,8 +5,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import jakarta.servlet.http.HttpSession;
 
+import java.io.IOException;
 /**
  * Servlet implementation class Login
  */
@@ -26,7 +27,10 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/privato/").forward(request, response);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("Palestra", 1);
+        
+		request.getRequestDispatcher("/WEB-INF/privato/index.jsp").forward(request, response);
 	}
-
 }

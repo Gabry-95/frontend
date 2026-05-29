@@ -52,7 +52,7 @@
 	%>
 
 	<!-- Navigation-->
-	<%@ include file="/Navbar.jsp"%>
+	<%@ include file="/WEB-INF/Navbar.jsp"%>
 
 	<div class="map" id="contact">
 		<iframe
@@ -229,7 +229,7 @@
 	</div>
 
 	<!-- Footer-->
-	<%@ include file="/Footer.jsp"%>
+	<%@ include file="/WEB-INF/Footer.jsp"%>
 	<!-- Bootstrap core JS-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
