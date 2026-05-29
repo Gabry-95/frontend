@@ -31,7 +31,7 @@ public class ClienteDAO {
 	}
 
 	public boolean salva(Cliente cliente) {
-		String query = "INSERT INTO Cliente VALUES ( ?, ?, ?, ?)";
+		String query = "INSERT INTO Cliente (nome, cognome, telefono) VALUES ( ?, ?, ?)";
 		boolean esito = false;
 
 		PreparedStatement ps;
@@ -39,10 +39,10 @@ public class ClienteDAO {
 		try {
 			ps = conn.prepareStatement(query);
 
-			ps.setInt(1, cliente.getMatricola());
-			ps.setString(2, cliente.getNome());
-			ps.setString(3, cliente.getCognome());
-			ps.setLong(4, cliente.getTelefono());
+			//ps.setInt(1, cliente.getMatricola());
+			ps.setString(1, cliente.getNome());
+			ps.setString(2, cliente.getCognome());
+			ps.setLong(3, cliente.getTelefono());
 
 			int tmp = ps.executeUpdate();
 			if (tmp == 1)
