@@ -3,7 +3,7 @@
 
 
 <%@page import="it.pale.tweb.dao.beans.News"%>
-<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>	
+<%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>
 
 <%@page import="it.pale.tweb.dao.beans.Palestra"%>
 <%@page import="it.pale.tweb.dao.beans.Corso"%>
@@ -48,6 +48,7 @@
 	Vector<Personal_trainer> pt= (Vector<Personal_trainer>)request.getAttribute("pt");
 	Vector<News> news= (Vector<News>)request.getAttribute("news");
 	Vector<CorsoIstruttore> cis= (Vector<CorsoIstruttore>)request.getAttribute("cis");
+	Integer [] numIscritti= (Integer []) request.getAttribute("numIscritti");
 	%>
 
 	<!-- Navigation-->
@@ -81,7 +82,7 @@
 		<p><%=telefono%></p>
 		<br>
 	</div>
-	
+
 	<div class="container py-5">
 		<h3 class="mb-1">Corsi Disponibili</h3>
 		<table class="table table-striped">
@@ -92,22 +93,25 @@
 					<th scope="col">Tipo</th>
 					<th scope="col">Costo</th>
 					<th scope="col">ID Corso</th>
+					<th scope="col">Numero Di Iscritti</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
 				int k=0;
 				for (Corso c : corsi) {
-					k++;
+					
 				%>
 				<tr>
-					<td><%=k%></td>
+					<td><%=k+1%></td>
 					<td><%=c.getTipo()%></td>
 					<td><%=c.getNome()%></td>
 					<td><%=c.getCosto()%> €</td>
 					<td><%=c.getId()%></td>
+					<td><%=numIscritti[k]%></td>
 				</tr>
 				<%
+					k++;
 				}
 				%>
 			</tbody>
@@ -143,7 +147,7 @@
 			</tbody>
 		</table>
 	</div>
-	
+
 	<div class="container py-5">
 		<h3 class="mb-1">Istruttori di Sala</h3>
 		<table class="table table-striped">

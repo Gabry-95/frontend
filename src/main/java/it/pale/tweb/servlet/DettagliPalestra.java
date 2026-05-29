@@ -69,10 +69,17 @@ public class DettagliPalestra extends HttpServlet {
 		String indirizzoEncoded = URLEncoder.encode(indirizzo, "UTF-8");
 		
 		corsi=cDAO.getCorso(p);
+		Integer [] numIscritti = new Integer[corsi.size()];
 		is=isDAO.elencoIS(p);
 		pt=ptDAO.elencoPT(p);
 		news=newsDAO.getNews(p);
 		cis=ciDAO.ListaCorsoIstruttore(p);
+		
+		int k=0;	
+		for(Corso c: corsi) {
+			numIscritti[k]=cDAO.numIscritti(c);
+			k++;
+		}
 		
 		//Output
 		request.setAttribute("indirizzoEncoded", indirizzoEncoded);
@@ -82,6 +89,7 @@ public class DettagliPalestra extends HttpServlet {
 		request.setAttribute("pt", pt);
 		request.setAttribute("news", news);
 		request.setAttribute("cis", cis);
+		request.setAttribute("numIscritti", numIscritti);
 		
 		//view
 		request.getRequestDispatcher("dettagliPalestra.jsp").forward(request, response);
