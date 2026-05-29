@@ -70,6 +70,7 @@ public class DettagliPalestra extends HttpServlet {
 		
 		corsi=cDAO.getCorso(p);
 		Integer [] numIscritti = new Integer[corsi.size()];
+		
 		is=isDAO.elencoIS(p);
 		pt=ptDAO.elencoPT(p);
 		news=newsDAO.getNews(p);
