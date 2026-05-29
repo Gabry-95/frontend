@@ -29,7 +29,7 @@ public class PalestraDAO {
 		DBManager.closeConnection();
 		return res;
 	}
-
+	
 	private Palestra recordToPalestra(ResultSet rs) throws SQLException {
 		Palestra palestra = new Palestra();
 		palestra.setId(rs.getInt("id"));
@@ -37,6 +37,7 @@ public class PalestraDAO {
 		palestra.setCap(rs.getInt("cap"));
 		palestra.setCitta(rs.getString("citta"));
 		palestra.setVia(rs.getString("via"));
+		palestra.setCivico(rs.getString("civico"));
 
 		return palestra;
 	}
@@ -60,9 +61,9 @@ public class PalestraDAO {
 		DBManager.closeConnection();
 		return res;
 	}
-
+	
 	public boolean salva(Palestra palestra) {
-		String query = "INSERT INTO Palestra VALUES ( ?, ?, ?, ?, ?)";
+		String query = "INSERT INTO Palestra VALUES ( ?, ?, ?, ?, ?, ?)";
 		boolean esito = false;
 
 		PreparedStatement ps;
@@ -75,6 +76,7 @@ public class PalestraDAO {
 			ps.setInt(3, palestra.getCap());
 			ps.setString(4, palestra.getVia());
 			ps.setString(5, palestra.getCitta());
+			ps.setString(6, palestra.getCivico());
 
 			int tmp = ps.executeUpdate();
 			if (tmp == 1)
@@ -107,9 +109,10 @@ public class PalestraDAO {
 		DBManager.closeConnection();
 		return esito;
 	}
-
+	
+	//
 	public boolean modifica(Palestra palestra) {
-		String query = "UPDATE Palestra SET telefono=?, cap=?, via=?, citta=? WHERE id=?";
+		String query = "UPDATE Palestra SET telefono=?, cap=?, via=?, citta=?, civico=? WHERE id=?";
 		boolean esito = false;
 
 		PreparedStatement ps;
@@ -121,7 +124,8 @@ public class PalestraDAO {
 			ps.setInt(2, palestra.getCap());
 			ps.setString(3, palestra.getVia());
 			ps.setString(4, palestra.getCitta());
-			ps.setInt(5, palestra.getId());
+			ps.setString(5, palestra.getCivico());
+			ps.setInt(6, palestra.getId());
 
 			int tmp = ps.executeUpdate();
 			if (tmp == 1)

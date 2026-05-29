@@ -135,29 +135,29 @@ public class Personale_amministrativoDAO {
 	}
 	
 	//Elenca personale amministrativo di una palestra ordinandoli per cognome
-	public Vector<Personale_amministrativo> elencoPA(Palestra p) {
-		//nome, cognome
-		String query = "SELECT * FROM personale_amministrativo "
-				+ "WHERE palestra = ? "
-				+ "ORDER BY cognome";
-
-		Vector<Personale_amministrativo> res = new Vector<Personale_amministrativo>();
-		PreparedStatement ps;
-		conn = DBManager.startConnection();
-		try {
-			ps = conn.prepareStatement(query);
-			ps.setInt(1, p.getId());
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				Personale_amministrativo personalA = recordToPersonaleA(rs);
-				res.add(personalA);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		DBManager.closeConnection();
-		return res;
-	}
+//	public Vector<Personale_amministrativo> elencoPA(Palestra p) {
+//		//nome, cognome
+//		String query = "SELECT * FROM personale_amministrativo "
+//				+ "WHERE palestra = ? "
+//				+ "ORDER BY cognome";
+//
+//		Vector<Personale_amministrativo> res = new Vector<Personale_amministrativo>();
+//		PreparedStatement ps;
+//		conn = DBManager.startConnection();
+//		try {
+//			ps = conn.prepareStatement(query);
+//			ps.setInt(1, p.getId());
+//			ResultSet rs = ps.executeQuery();
+//			while (rs.next()) {
+//				Personale_amministrativo personalA = recordToPersonaleA(rs);
+//				res.add(personalA);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		DBManager.closeConnection();
+//		return res;
+//	}
 	
 	//69. Data una palestra restituire tutti i numeri di telefono dei dipendenti con nome e cognome 
 		public Vector<Personale_amministrativo> getTelefonoPA(Palestra p) {

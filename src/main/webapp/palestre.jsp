@@ -49,7 +49,7 @@
 				for (Palestra p : palestre) {
 				%>
 				<option value="<%=p.getId()%>"><%=p.getCitta()%> ,
-					<%=p.getVia()%>
+					<%=p.getVia()%>, <%=p.getCap()%>
 				</option>
 				<%
 				} 
