@@ -159,38 +159,41 @@ public class ClienteDAO {
 	}
 	
 	//24 Dato un corso restituisci una lista dei clienti che seguono il corso
-	public Vector<Cliente> getIscrittiCorso(Palestra p, Corso c){
-		
-		//è necessario il controllo sulla palestra?
-		String query="SELECT cliente.matricola, cliente.nome, cliente.cognome, cliente.telefono FROM Cliente "
-				+ "JOIN abbonamento ON cliente.Matricola = abbonamento.Cliente "
-				+ "JOIN frequenta ON frequenta.Abbonamento = abbonamento.Fattura "
-				+ "JOIN corso ON corso.ID = frequenta.Corso "
-				+ "WHERE corso.Palestra = ? AND corso.id=?";
-
-		Vector<Cliente> res= new Vector<Cliente>();
-		PreparedStatement ps;
-		conn = DBManager.startConnection();
-		try {
-			ps = conn.prepareStatement(query);
-			ps.setInt(1, p.getId());
-			ps.setInt(2, c.getId());
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				Cliente cliente = recordToCliente(rs);
-				res.add(cliente);
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
-
-		return res;
-	}
+//	public Vector<Cliente> getIscrittiCorso(Palestra p, Corso c){
+//		
+//		//è necessario il controllo sulla palestra?
+//		String query="SELECT cliente.matricola, cliente.nome, cliente.cognome, cliente.telefono FROM Cliente "
+//				+ "JOIN abbonamento ON cliente.Matricola = abbonamento.Cliente "
+//				+ "JOIN frequenta ON frequenta.Abbonamento = abbonamento.Fattura "
+//				+ "JOIN corso ON corso.ID = frequenta.Corso "
+//				+ "WHERE corso.Palestra = ? AND corso.id=?";
+//
+//		Vector<Cliente> res= new Vector<Cliente>();
+//		PreparedStatement ps;
+//		conn = DBManager.startConnection();
+//		try {
+//			ps = conn.prepareStatement(query);
+//			ps.setInt(1, p.getId());
+//			ps.setInt(2, c.getId());
+//			ResultSet rs = ps.executeQuery();
+//			while (rs.next()) {
+//				Cliente cliente = recordToCliente(rs);
+//				res.add(cliente);
+//			}
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//
+//		return res;
+//	}
 	
 	//24 Dato un corso restituire la lista di nome cognome e numero di telefono dei clienti che lo seguono 
 	public Vector<Cliente> IscrittiCorso(Corso c){
 		
 		//cliente.nome, cliente.cognome, cliente.telefono
+		
+		//Distinct perchè magari un cliente ha effettuato upgrade da gold a premium oppure ha saltato un mese di premium o gold 
+		
 		String query="SELECT DISTINCT cliente.matricola, cliente.nome, cliente.cognome, cliente.telefono FROM cliente "
 				+ "JOIN abbonamento ON abbonamento.cliente = cliente.Matricola "
 				+ "JOIN frequenta ON frequenta.Abbonamento = abbonamento.Fattura "
