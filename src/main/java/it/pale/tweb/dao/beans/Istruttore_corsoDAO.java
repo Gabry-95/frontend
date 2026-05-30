@@ -140,7 +140,7 @@ public class Istruttore_corsoDAO {
 	
 	//69 Data una palestra restituire tutti i numeri di telefono dei dipendenti con nome e cognome
 	public Vector<Istruttore_corso> elencoIC(Palestra p) {
-		String query = "SELECT * FROM Istruttore_corso WHERE palestra=?";
+		String query = "SELECT * FROM Istruttore_corso WHERE palestra=? ORDER BY matricola ";
 
 		Vector<Istruttore_corso> res = new Vector<Istruttore_corso>();
 		PreparedStatement ps;

@@ -140,7 +140,7 @@ public class Istruttore_salaDAO {
 	public Vector<Istruttore_sala> elencoIS(Palestra p) {
 		String query = "SELECT * FROM istruttore_sala "
 				+ " WHERE palestra = ? "
-				+ " ORDER BY cognome ";
+				+ " ORDER BY matricola ";
 
 		Vector<Istruttore_sala> res = new Vector<Istruttore_sala>();
 		PreparedStatement ps;

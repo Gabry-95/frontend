@@ -162,7 +162,7 @@ public class Personale_amministrativoDAO {
 	//69. Data una palestra restituire tutti i numeri di telefono dei dipendenti con nome e cognome 
 		public Vector<Personale_amministrativo> getTelefonoPA(Palestra p) {
 			//telefono, nome, cognome
-			String query = "SELECT * FROM Personale_amministrativo WHERE palestra=?";
+			String query = "SELECT * FROM Personale_amministrativo WHERE palestra=? ORDER BY matricola";
 
 
 			Vector<Personale_amministrativo>res = new Vector<Personale_amministrativo>();
