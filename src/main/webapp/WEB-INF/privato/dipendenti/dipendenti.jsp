@@ -3,6 +3,9 @@
 
 
 <%@page import="it.pale.tweb.dao.beans.Istruttore_sala"%>
+<%@page import="it.pale.tweb.dao.beans.Istruttore_corso"%>
+<%@page import="it.pale.tweb.dao.beans.Personal_trainer"%>
+<%@page import="it.pale.tweb.dao.beans.Personale_amministrativo"%>
 
 
 <%@page import="java.util.Vector"%>
@@ -32,12 +35,16 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/css/styles.css"
+	rel="stylesheet" />
 </head>
 <body id="page-top">
 
 	<%
 	Vector<Istruttore_sala> is= (Vector<Istruttore_sala>)request.getAttribute("is");
+	Vector<Istruttore_corso> ic=(Vector<Istruttore_corso>)request.getAttribute("ic");
+	Vector<Personal_trainer> pt = (Vector<Personal_trainer>)request.getAttribute("pt");
+	Vector<Personale_amministrativo> pa=(Vector<Personale_amministrativo>) request.getAttribute("pa");
 	%>
 
 	<!-- Navigation-->
@@ -62,10 +69,10 @@
 					k++;
 				%>
 				<tr>
-					<td><%=k%></td>
+					<%-- <td><%=k%></td> --%>
 					<td><%=s.getMatricola()%></td>
 					<td><%=s.getNome()%></td>
-					<td><%=s.getCognome()%> €</td>
+					<td><%=s.getCognome()%></td>
 					<td><%=s.getPalestra()%></td>
 					<td><%=s.getTelefono()%></td>
 				</tr>
@@ -78,55 +85,30 @@
 	</div>
 
 	<div class="container py-5">
-		<h3 class="mb-1">Istruttori Dei Corsi</h3>
+		<h3 class="mb-1">Istruttori Di Corsi</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col">Matricola</th>
 					<th scope="col">Nome</th>
 					<th scope="col">Cognome</th>
-					<th scope="col">Corso Insegnato</th>
+					<th scope="col">Palestra</th>
+					<th scope="col">Telefono</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
 				k=0;
-				for (CorsoIstruttore ci : cis) {
+				for (Istruttore_corso i: ic) {
 					k++;
 				%>
 				<tr>
-					<td><%=k%></td>
-					<td><%=ci.getIstruttore_corso().getNome()%></td>
-					<td><%=ci.getIstruttore_corso().getCognome()%></td>
-					<td><%=ci.getCorso().getNome()%></td>
-				</tr>
-				<%
-				}
-				%>
-			</tbody>
-		</table>
-	</div>
-
-	<div class="container py-5">
-		<h3 class="mb-1">Istruttori di Sala</h3>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Nome</th>
-					<th scope="col">Cognome</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-				k=0;
-				for (Istruttore_sala s : is) {
-					k++;
-				%>
-				<tr>
-					<td><%=k%></td>
-					<td><%=s.getNome()%></td>
-					<td><%=s.getCognome()%></td>
+					<%-- <td><%=k%></td> --%>
+					<td><%=i.getMatricola()%></td>
+					<td><%=i.getNome()%></td>
+					<td><%=i.getCognome()%></td>
+					<td><%=i.getPalestra()%></td>
+					<td><%=i.getTelefono()%></td>
 				</tr>
 				<%
 				}
@@ -140,21 +122,26 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col">Matricola</th>
 					<th scope="col">Nome</th>
 					<th scope="col">Cognome</th>
+					<th scope="col">Palestra</th>
+					<th scope="col">Telefono</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
 				k=0;
-				for (Personal_trainer ptr : pt) {
+				for (Personal_trainer t: pt) {
 					k++;
 				%>
 				<tr>
-					<td><%=k%></td>
-					<td><%=ptr.getNome()%></td>
-					<td><%=ptr.getCognome()%></td>
+					<%-- <td><%=k%></td> --%>
+					<td><%=t.getMatricola()%></td>
+					<td><%=t.getNome()%></td>
+					<td><%=t.getCognome()%></td>
+					<td><%=t.getPalestra()%></td>
+					<td><%=t.getTelefono()%></td>
 				</tr>
 				<%
 				}
@@ -164,21 +151,30 @@
 	</div>
 
 	<div class="container py-5">
-		<h3 class="mb-1">Bacheca Notizie Palestra</h3>
+		<h3 class="mb-1">Personale amministrativo</h3>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col">Data</th>
-					<th scope="col">News</th>
+					<th scope="col">Matricola</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Cognome</th>
+					<th scope="col">Palestra</th>
+					<th scope="col">Telefono</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
-				for (News n : news) {
+				k=0;
+				for (Personale_amministrativo a: pa) {
+					k++;
 				%>
 				<tr>
-					<td><%=Utils.dateToString(n.getData())%></td>
-					<td><%=n.getTesto()%></td>
+					<%-- <td><%=k%></td> --%>
+					<td><%=a.getMatricola()%></td>
+					<td><%=a.getNome()%></td>
+					<td><%=a.getCognome()%></td>
+					<td><%=a.getPalestra()%></td>
+					<td><%=a.getTelefono()%></td>
 				</tr>
 				<%
 				}
@@ -186,6 +182,8 @@
 			</tbody>
 		</table>
 	</div>
+
+
 
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>

@@ -23,7 +23,7 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+<link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 
@@ -63,7 +63,7 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="Palestre">
+					<a class="portfolio-item" href="/privato/dipendenti/Dipendenti">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Cerca la palestra più vicina a te</div>
@@ -74,7 +74,7 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="Sponsor">
+					<a class="portfolio-item" href="/privato/Prova">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Sponsor</div>

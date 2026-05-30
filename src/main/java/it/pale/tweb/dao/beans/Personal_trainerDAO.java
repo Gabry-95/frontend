@@ -140,7 +140,7 @@ public class Personal_trainerDAO {
 		//cognome, nome
 		String query = "SELECT * FROM personal_trainer "
 				+ "WHERE palestra = ? "
-				+ "ORDER BY cognome";
+				+ "ORDER BY matricola";
 
 		Vector<Personal_trainer> res = new Vector<Personal_trainer>();
 		PreparedStatement ps;
