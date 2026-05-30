@@ -16,15 +16,15 @@ public class TestCliente {
 		Cliente Cliente=new Cliente();
 		ClienteDAO clienteDAO= new ClienteDAO();
 //		//Adesso gli assegno:
-//		Cliente.setMatricola(100);
-//		Cliente.setNome("Peppe");
-//		Cliente.setCognome("Senatorissimo");
-//		Cliente.setTelefono(67676767);
+		Cliente.setMatricola(100);
+		Cliente.setNome("Peppe");
+		Cliente.setCognome("Senatorissimo");
+		Cliente.setTelefono(67676767);
 
 		//METODO SALVA
-//		if (clienteDAO.salva(Cliente)) {
-//		System.out.println("Salvato "+Cliente);
-//		}
+		if (clienteDAO.salva(Cliente)) {
+		System.out.println("Salvato "+Cliente);
+		}
 		
 		//MODIFICHIAMO GLI ATTRIBUTI DI Cliente PER PROVARE IL METODO MODIFICA
 //		Cliente.setMatricola(100);
@@ -69,11 +69,11 @@ public class TestCliente {
 //		}
 //		
 		//DATO UN CORSO RESTITUIRE LA LISTA DI NOME COGNOME E NUMERO DI TELEFONO DEI CLIENTI CHE LO SEGUONO
-		Corso c= new Corso();
-		c.setId(4);
-		Vector<Cliente> Clientes= clienteDAO.IscrittiCorso(c);
-		for (Cliente a:Clientes) {
-			System.out.println("Nome: "+a.getNome()+" cognome: "+a.getCognome()+" telefono: "+a.getTelefono());
-		}
+//		Corso c= new Corso();
+//		c.setId(4);
+//		Vector<Cliente> Clientes= clienteDAO.IscrittiCorso(c);
+//		for (Cliente a:Clientes) {
+//			System.out.println("Nome: "+a.getNome()+" cognome: "+a.getCognome()+" telefono: "+a.getTelefono());
+//		}
 	}
 }
