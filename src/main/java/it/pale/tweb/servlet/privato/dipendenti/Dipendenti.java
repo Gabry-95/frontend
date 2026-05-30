@@ -1,4 +1,4 @@
-package it.pale.tweb.servlet.privato;
+package it.pale.tweb.servlet.privato.dipendenti;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
