@@ -31,8 +31,8 @@ public class Abbonamento {
 	public Abbonamento(int fattura, String tipo, int cliente, int corsi) {
 		
 		final int COSTO_STANDARD=30;
-		final int COSTO_PREMIUM=40;
-		final int COSTO_GOLD=50;
+		final int COSTO_PREMIUM=60;
+		final int COSTO_GOLD=90;
 		
 		final int LIMITI_INGRSSO=3;
 		
@@ -40,16 +40,16 @@ public class Abbonamento {
 		this.tipo = tipo;
 	
 		//i piani di abbonamento hanno prezzi e limiti di ingrsso fissi
-		if(this.tipo.equals("standard")) {
+		if(this.tipo.equals("Standard")) {
 			this.limiteIngressi = LIMITI_INGRSSO;
 			this.costo=COSTO_STANDARD+corsi;
 		}
 		else {
 			this.limiteIngressi = null;
-			if(this.tipo.equals("premium")) {
+			if(this.tipo.equals("Premium")) {
 				this.costo=COSTO_PREMIUM+corsi;
 			}
-			else if(this.tipo.equals("gold")){
+			else if(this.tipo.equals("Gold")){
 				this.costo=COSTO_GOLD+corsi;
 			}
 		}
