@@ -23,39 +23,32 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="${pageContext.request.contextPath}/css/styles.css"
-	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
-	<div class="container py-5">
-		<form action="/privato/cliente/AggiungiCliente" method="get">
-			<div class="mb-3">
-				<label for="InputNome" class="form-label">Nome </label> <input
-					type="text" class="form-control" data-sb-validations="required"
-					placeholder="Inserire Nome" name="nome" required>
+	<form action="/privato/cliente/AggiungiCliente" method="get">
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Nome"
+					name="nome" required>
+					
 			</div>
-			<div class="mb-3">
-				<label for="InputCognome" class="form-label">Cognome </label> <input
-					type="text" data-sb-validations="required" class="form-control"
-					placeholder="Inserire Cognome" name="cognome" required>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Cognome"
+					name="cognome" required>
 			</div>
-			<div class="mb-3">
-				<label for="InputTelefono" class="form-label">Numero di
-					Telefono</label> <input type="text" class="form-control"
-					placeholder="Inserire Telefono" name="telefono" required>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Numero di Telefono"
+					name="telefono" required>
 			</div>
-			<div class="mb-3">
-				<button class="btn btn-primary btn-xl" id="aggiungi-cliente"
-					type="submit">Aggiungi</button>
-			</div>
-		</form>
-	</div>
+			<button class="btn btn-primary btn-xl" id="aggiungi-cliente" type="submit">Aggiungi</button>
+		</div>
+	</form>
 
-	<br>
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
 
