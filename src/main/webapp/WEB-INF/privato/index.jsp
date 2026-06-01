@@ -42,10 +42,10 @@
 			</div>
 			<div class="row gx-0">
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="Galleria">
+					<a class="portfolio-item" href="/privato/cliente/RichiediAggiungiCliente)">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Galleria</div>
+								<div class="h1">Aggiungi Cliente</div>
 								<p class="mb-0">Non credi a ciò che diciamo? Dai un occhiata
 									tu stesso!</p>
 							</div>
@@ -53,10 +53,10 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="Abbonamenti">
+					<a class="portfolio-item" href="/privato/abbonamento/RichiediAggiungiAbbonamento">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Abbonamenti</div>
+								<div class="h1">Aggiungi Abbonamento</div>
 								<p class="mb-0">Visualizza i nostri piani di abbonamento</p>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
@@ -66,7 +66,31 @@
 					<a class="portfolio-item" href="/privato/dipendenti/Dipendenti">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Cerca la palestra più vicina a te</div>
+								<div class="h1">Dipendenti</div>
+								<p class="mb-0">Visualizza le informazioni e i servizi
+									offerti dalla sede a te più comoda</p>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port3.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="/privato/news/RichiediCreaNews">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">News</div>
+								<p class="mb-0">Scopri le storie di chi ha creduto nella
+									nostra mission</p>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
+					</a>
+				</div>
+			</div>
+		</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="/privato/abbonamento/DettagliAbbonamento">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Rinnova Abbonamento</div>
 								<p class="mb-0">Visualizza le informazioni e i servizi
 									offerti dalla sede a te più comoda</p>
 							</div>
@@ -77,15 +101,13 @@
 					<a class="portfolio-item" href="/privato/Prova">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Sponsor</div>
+								<div class="h1">Visualizza Dettagli Abbonamento</div>
 								<p class="mb-0">Scopri le storie di chi ha creduto nella
 									nostra mission</p>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
 					</a>
 				</div>
-			</div>
-		</div>
 	</section>
 	
 	<!-- Footer-->

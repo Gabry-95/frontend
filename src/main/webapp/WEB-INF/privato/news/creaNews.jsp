@@ -1,8 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@page import="it.pale.tweb.dao.utils.Utils"%>
+	<%@page import="it.pale.tweb.dao.beans.Palestra"%>
+<%@page import="it.pale.tweb.dao.beans.PalestraDAO"%>
+<%@page import="java.util.Vector"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<%
+	Vector<Palestra> palestre = (Vector<Palestra>)request.getAttribute("palestre");
+	%>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -23,15 +31,21 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
+<%
 
+%>
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
 	<form action="/privato/cliente/CreaNews" method="get">
 		<div class="row">
+		<div class="col">
+				<input type="text" class="form-control" placeholder="Id"
+					name="id">
+			</div>
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Testo"
 					name="testo">
@@ -41,8 +55,18 @@
 					name="data">
 			</div>
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Palestra"
-					name="palestra">
+			
+				<select name="idPalestra" class="custom-select">
+				<%
+				for (Palestra p: palestre) {
+				%>
+				<option value="<%=p.getId()%>"><%=p.getCitta()%> ,
+					<%=p.getVia()%>, <%=p.getCap()%>
+				</option>
+				<%
+				} 
+				%>
+			</select>
 			</div>
 			<button class="btn btn-primary btn-xl" id="crea-news" type="submit">Crea</button>
 		</div>

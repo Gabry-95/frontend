@@ -31,13 +31,13 @@ public class RichiediCreaNews extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		int id=(int) request.getAttribute("Palestra");
+		int id=(int)session.getAttribute("Palestra");
 		Palestra p= new Palestra();
 		p.setId(id);
 		
 		request.setAttribute("palestra", p);
 
-		request.getRequestDispatcher("/WEB-INF/privato/cliente/creaNews.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/privato/news/creaNews.jsp").forward(request, response);
 	}
 
 }
