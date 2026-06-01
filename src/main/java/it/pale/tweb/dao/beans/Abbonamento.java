@@ -38,7 +38,7 @@ public class Abbonamento {
 		
 		this.fattura = fattura;
 		this.tipo = tipo;
-		
+	
 		//i piani di abbonamento hanno prezzi e limiti di ingrsso fissi
 		if(this.tipo.equals("standard")) {
 			this.limiteIngressi = LIMITI_INGRSSO;
@@ -57,7 +57,7 @@ public class Abbonamento {
 		//CREAZIONE DATA SCADENZA: creiamo data di oggi e aggiungiamo 30 giorni da oggi 
 		Date oggi = new Date();
 		long mil= oggi.getTime();
-		mil += 30*24*60*60*1000;
+		mil += 30L*24*60*60*1000;
 		Date scadenza= new Date(mil);
 		this.dataScadenza = scadenza;
 		

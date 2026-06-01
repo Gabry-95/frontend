@@ -42,12 +42,10 @@
 			</div>
 			<div class="row gx-0">
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="Galleria">
+					<a class="portfolio-item" href="/privato/cliente/RichiediAggiungiCliente">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Galleria</div>
-								<p class="mb-0">Non credi a ciò che diciamo? Dai un occhiata
-									tu stesso!</p>
+								<div class="h1">Aggiungi Cliente</div>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port1.jpg" alt="..." />
 					</a>

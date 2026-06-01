@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Aggiungi Cliente</title>
+<title>Aggiungi Abbonamento</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -32,30 +32,45 @@
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
 	<div class="container py-5">
-		<form action="/privato/cliente/AggiungiCliente" method="get">
-			<div class="mb-3">
-				<label for="InputNome" class="form-label">Nome </label> <input
-					type="text" class="form-control" data-sb-validations="required"
-					placeholder="Inserire Nome" name="nome" required>
+		<form class="row g-3">
+			<div class="col-md-6">
+				<label for="inputEmail4" class="form-label">Codice Fattura</label> <input
+					type="email" class="form-control" id="inputEmail4">
 			</div>
-			<div class="mb-3">
-				<label for="InputCognome" class="form-label">Cognome </label> <input
-					type="text" data-sb-validations="required" class="form-control"
-					placeholder="Inserire Cognome" name="cognome" required>
+			<div class="col-md-6">
+				<label for="inputPassword4" class="form-label">Matricola Utente</label> <input
+					type="password" class="form-control" id="inputPassword4">
 			</div>
-			<div class="mb-3">
-				<label for="InputTelefono" class="form-label">Numero di
-					Telefono</label> <input type="text" class="form-control"
-					placeholder="Inserire Telefono" name="telefono" required>
+			<div class="col-md-6">
+				<label for="inputCity" class="form-label">City</label> <input
+					type="text" class="form-control" id="inputCity">
 			</div>
-			<div class="mb-3">
-				<button class="btn btn-primary btn-xl" id="aggiungi-cliente"
-					type="submit">Aggiungi</button>
+			<div class="col-md-4">
+				<label for="inputState" class="form-label">Tipologia Abbonamento</label> <select
+					id="inputState" class="form-select">
+					<option selected>Standard</option>
+					<option>Premium</option>
+					<option>Gold</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<label for="inputZip" class="form-label">Zip</label> <input
+					type="text" class="form-control" id="inputZip">
+			</div>
+			<div class="col-12">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck">
+					<label class="form-check-label" for="gridCheck"> Check me
+						out </label>
+				</div>
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Sign in</button>
 			</div>
 		</form>
+
 	</div>
 
-	<br>
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
 
