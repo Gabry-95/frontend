@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@page import="it.pale.tweb.dao.beans.Corso"%>
+<%@page import="it.pale.tweb.dao.beans.CorsoDAO"%>
+<%@page import="java.util.Vector"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,40 +33,42 @@
 </head>
 <body id="page-top">
 
+	<%
+	Vector<Corso> corsi = (Vector<Corso>) request.getAttribute("corsi");
+	%>
+
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
 	<div class="container py-5">
-		<form class="row g-3">
+		<form class="row g-3"
+			action="/privato/abbonamento/AggiungiAbbonamento" method="get">
 			<div class="col-md-6">
-				<label for="inputEmail4" class="form-label">Codice Fattura</label> <input
-					type="text" class="form-control" name="codice-fattura">
+				<label for="fattura" class="form-label">Codice Fattura</label> <input
+					type="text" class="form-control" name="fattura" required>
 			</div>
 			<div class="col-md-6">
-				<label for="inputPassword4" class="form-label">Matricola
-					Utente</label> <input type="text" class="form-control" name="matricola">
-			</div>
-			<div class="col-md-6">
-				<label for="inputCity" class="form-label">Data di Scadenza</label> <input
-					type="date" class="form-control" name="data">
+				<label for="matricola" class="form-label">Matricola Utente</label> <input
+					type="text" class="form-control" name="matricola" required>
 			</div>
 			<div class="col-md-4">
-				<label for="inputState" class="form-label">Tipologia
-					Abbonamento</label> <select name="tipo" class="form-select">
-					<option selected>Standard</option>
-					<option>Premium</option>
-					<option>Gold</option>
+				<label for="tipo" class="form-label">Tipologia Abbonamento</label> <select
+					name="tipo" class="form-select">
+					<option selected value="Standard">Standard</option>
+					<option value="Premium">Premium</option>
+					<option value="Gold">Gold</option>
 				</select>
 			</div>
-			<div class="col-md-2">
-				<label for="inputZip" class="form-label">Limite Ingresso</label> <input
-					type="text" class="form-control" name="limite-ingresso"
-					value="<% 
-        	String tipologia = request.getParameter("tipo");
-        	if (tipo == null || tipo.equals('Standard')) {
-            	out.print('3');
-        	}
-    		%>">
+			<div class="form-check">
+				<%
+				for(Corso c: corsi){
+				%>
+					<input class="form-check-input" type="checkbox" name="corsi"
+						value="<%= c.getId() %>"> <label class="form-check-label">
+						<%=c.getNome()%> </label>
+				<%
+				}
+				%>
 			</div>
 			<div class="col-12">
 				<button type="submit" class="btn btn-primary">Aggiungi
@@ -70,8 +77,31 @@
 		</form>
 	</div>
 
-	<!-- Footer-->
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
 
+			const selectTipo = document.getElementById("tipo");
+			const checkbox = document.getElementById("checkDefault");
+
+			function aggiornaCheckbox() {
+				if (selectTipo.value === "Standard") {
+					checkbox.checked = false; // deseleziona se era selezionata
+					checkbox.disabled = true; // disabilita
+				} else {
+					checkbox.disabled = false; // abilita
+				}
+			}
+
+			// eseguito al caricamento della pagina
+			aggiornaCheckbox();
+
+			// eseguito ogni volta che cambia la select
+			selectTipo.addEventListener("change", aggiornaCheckbox);
+		});
+	</script>
+
+
+	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
 
 	<!-- Bootstrap core JS-->

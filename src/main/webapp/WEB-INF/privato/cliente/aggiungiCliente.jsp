@@ -34,16 +34,16 @@
 		<div class="row">
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Nome"
-					name="nome">
+					name="nome" required>
 					
 			</div>
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Cognome"
-					name="cognome">
+					name="cognome" required>
 			</div>
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Numero di Telefono"
-					name="telefono">
+					name="telefono" required>
 			</div>
 			<button class="btn btn-primary btn-xl" id="aggiungi-cliente" type="submit">Aggiungi</button>
 		</div>

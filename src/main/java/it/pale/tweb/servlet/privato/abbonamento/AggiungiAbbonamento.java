@@ -7,6 +7,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import it.pale.tweb.dao.beans.Abbonamento;
+import it.pale.tweb.dao.beans.AbbonamentoDAO;
+import it.pale.tweb.dao.beans.join.FrequentaDAO;
+
 /**
  * Servlet implementation class AggiungiAbbonamento
  */
@@ -26,8 +30,20 @@ public class AggiungiAbbonamento extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		int matricola=Integer.parseInt(request.getParameter("matricola"));
+		int fattura=Integer.parseInt(request.getParameter("fattura"));
+		String tipo=request.getParameter("tipo");
+		String corsiSelezionati =request.getParameter("corsi");
+		
+		Abbonamento a= new Abbonamento(fattura, tipo, matricola);
+		AbbonamentoDAO aDAO= new AbbonamentoDAO();
+		
+		
+		boolean esitoA=aDAO.salva(a);
+		
+		
+		
 	}
 
 }
