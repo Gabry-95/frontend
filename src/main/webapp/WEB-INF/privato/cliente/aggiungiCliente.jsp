@@ -35,6 +35,7 @@
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Nome"
 					name="nome">
+					
 			</div>
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Cognome"
