@@ -51,11 +51,10 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="Abbonamenti">
+					<a class="portfolio-item" href="/privato/abbonamento/RichiediAggiungiAbbonamento">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Abbonamenti</div>
-								<p class="mb-0">Visualizza i nostri piani di abbonamento</p>
+								<div class="h1">Crea Abbonamento</div>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
 					</a>
@@ -64,9 +63,7 @@
 					<a class="portfolio-item" href="/privato/dipendenti/Dipendenti">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Cerca la palestra più vicina a te</div>
-								<p class="mb-0">Visualizza le informazioni e i servizi
-									offerti dalla sede a te più comoda</p>
+								<div class="h1">Visualizza Personale</div>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port3.jpg" alt="..." />
 					</a>
@@ -75,11 +72,28 @@
 					<a class="portfolio-item" href="/privato/Prova">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Sponsor</div>
-								<p class="mb-0">Scopri le storie di chi ha creduto nella
-									nostra mission</p>
+								<div class="h1">Visualizza Dettagli Abbonamento</div>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="row gx-0">
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="/privato/cliente/RichiediAggiungiCliente">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Aggiungi Cliente</div>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port1.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="/privato/abbonamento/RichiediAggiungiAbbonamento">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Crea Abbonamento</div>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
 					</a>
 				</div>
 			</div>

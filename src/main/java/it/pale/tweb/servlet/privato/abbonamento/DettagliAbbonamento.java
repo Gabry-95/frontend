@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import it.pale.tweb.dao.beans.AbbonamentoDAO;
+import it.pale.tweb.dao.beans.Abbonamento;
+
 /**
  * Servlet implementation class DettagliAbbonamento
  */
@@ -26,8 +29,8 @@ public class DettagliAbbonamento extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
 	}
 
 }

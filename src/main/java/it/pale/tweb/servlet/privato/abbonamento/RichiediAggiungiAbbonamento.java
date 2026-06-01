@@ -35,7 +35,7 @@ public class RichiediAggiungiAbbonamento extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session=request.getSession();
-		 int id=(int)session.getAttribute("Palestra");
+		int id=(int)session.getAttribute("Palestra");
 		Palestra p= new Palestra();
 		p.setId(id);
 				
@@ -43,6 +43,6 @@ public class RichiediAggiungiAbbonamento extends HttpServlet {
 		Vector<Corso> corsi= cDAO.getCorso(p); 
 		
 		request.setAttribute("corsi", corsi);
-		request.getRequestDispatcher("/WEB-INF/privato/abbonamento/AggiungiAbbonamento.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/privato/abbonamento/aggiungiAbbonamento.jsp").forward(request, response);
 	}
 }

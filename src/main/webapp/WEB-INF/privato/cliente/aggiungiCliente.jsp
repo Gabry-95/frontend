@@ -23,32 +23,39 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+<link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
-	<form action="/privato/cliente/AggiungiCliente" method="get">
-		<div class="row">
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Nome"
-					name="nome" required>
-					
-			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Cognome"
-					name="cognome" required>
-			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Numero di Telefono"
-					name="telefono" required>
-			</div>
-			<button class="btn btn-primary btn-xl" id="aggiungi-cliente" type="submit">Aggiungi</button>
+	<div class="container py-5">
+		<div class="container px-4 px-lg-5 text-center">
+			<h1 class="mb-1">Crea Un Nuovo Cliente</h1>
 		</div>
-	</form>
-
+		<form class="row g-3" action="/privato/cliente/AggiungiCliente"
+			method="get">
+			<div class="col-md-6">
+				<label for="nome" class="form-label" required>Nome
+					</label> <input type="text" class="form-control" name="nome" required>
+			</div>
+			<div class="col-md-6">
+				<label for="cognome" class="form-label" required>Cognome
+					</label> <input type="text" class="form-control" name="cognome" required>
+			</div>
+			<div class="col-md-6">
+				<label for="telefono" class="form-label" required>Numero Di Telefono
+					</label> <input type="tel" class="form-control" name="telefono" required>
+			</div>
+			<div class="col-12">
+			<button type="submit" class="btn btn-primary">Aggiungi
+					Abbonamento</button>
+			</div>
+		</form>
+	</div>
+	
+	<br> <br> <br> <br>
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
 

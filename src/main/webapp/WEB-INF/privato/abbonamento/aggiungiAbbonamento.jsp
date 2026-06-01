@@ -28,8 +28,9 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="${pageContext.request.contextPath}/css/styles.css"
+<link href="/css/styles.css"
 	rel="stylesheet" />
+<script src="/js/checkbox.js"></script>
 </head>
 <body id="page-top">
 
@@ -41,65 +42,48 @@
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
 	<div class="container py-5">
+		<div class="container px-4 px-lg-5 text-center">
+			<h1 class="mb-1">Crea Un Nuovo Abbonamento</h1>
+		</div>
 		<form class="row g-3"
 			action="/privato/abbonamento/AggiungiAbbonamento" method="get">
 			<div class="col-md-6">
-				<label for="fattura" class="form-label">Codice Fattura</label> <input
-					type="text" class="form-control" name="fattura" required>
+				<label for="fattura" class="form-label" required>Codice
+					Fattura</label> <input type="text" class="form-control" name="fattura"
+					required>
 			</div>
 			<div class="col-md-6">
-				<label for="matricola" class="form-label">Matricola Utente</label> <input
-					type="text" class="form-control" name="matricola" required>
+				<label for="matricola" class="form-label" required>Matricola
+					Utente</label> <input type="text" class="form-control" name="matricola"
+					required>
 			</div>
 			<div class="col-md-4">
 				<label for="tipo" class="form-label">Tipologia Abbonamento</label> <select
-					name="tipo" class="form-select">
+					name="tipo" class="form-select" id="tipo">
 					<option selected value="Standard">Standard</option>
 					<option value="Premium">Premium</option>
 					<option value="Gold">Gold</option>
 				</select>
 			</div>
+			<h3 class="mb-1">Seleziona Corsi</h3>
+			<%
+			for (Corso c : corsi) {
+			%>
 			<div class="form-check">
-				<%
-				for(Corso c: corsi){
-				%>
-					<input class="form-check-input" type="checkbox" name="corsi"
-						value="<%= c.getId() %>"> <label class="form-check-label">
-						<%=c.getNome()%> </label>
-				<%
-				}
-				%>
+				<input class="form-check-input corso-checkbox" type="checkbox"
+					name="corsi" value="<%=c.getId()%>"> <label
+					class="form-check-label"> <%=c.getNome()%>
+				</label>
 			</div>
+			<%
+			}
+			%>
 			<div class="col-12">
 				<button type="submit" class="btn btn-primary">Aggiungi
 					Abbonamento</button>
 			</div>
 		</form>
 	</div>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-
-			const selectTipo = document.getElementById("tipo");
-			const checkbox = document.getElementById("checkDefault");
-
-			function aggiornaCheckbox() {
-				if (selectTipo.value === "Standard") {
-					checkbox.checked = false; // deseleziona se era selezionata
-					checkbox.disabled = true; // disabilita
-				} else {
-					checkbox.disabled = false; // abilita
-				}
-			}
-
-			// eseguito al caricamento della pagina
-			aggiornaCheckbox();
-
-			// eseguito ogni volta che cambia la select
-			selectTipo.addEventListener("change", aggiornaCheckbox);
-		});
-	</script>
-
 
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
