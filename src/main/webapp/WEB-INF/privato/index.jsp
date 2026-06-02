@@ -42,12 +42,14 @@
 			</div>
 			<div class="row gx-0">
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="/privato/cliente/RichiediAggiungiCliente)">
+
+					<a class="portfolio-item" href="/privato/cliente/RichiediAggiungiCliente">
+
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Aggiungi Cliente</div>
-								<p class="mb-0">Non credi a ciò che diciamo? Dai un occhiata
-									tu stesso!</p>
+
+								
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port1.jpg" alt="..." />
 					</a>
@@ -56,8 +58,10 @@
 					<a class="portfolio-item" href="/privato/abbonamento/RichiediAggiungiAbbonamento">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Aggiungi Abbonamento</div>
-								<p class="mb-0">Visualizza i nostri piani di abbonamento</p>
+
+
+								<div class="h1">Crea Abbonamento</div>
+
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
 					</a>
@@ -66,48 +70,47 @@
 					<a class="portfolio-item" href="/privato/dipendenti/Dipendenti">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1">Dipendenti</div>
-								<p class="mb-0">Visualizza le informazioni e i servizi
-									offerti dalla sede a te più comoda</p>
+
+							 <div class="h1">Visualizza Personale</div> 
+
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port3.jpg" alt="..." />
 					</a>
 				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="/privato/abbonamento/DettagliAbbonamento">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1">Visualizza Dettagli Abbonamento</div>
+
+
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
+					</a>
+				</div>
+
+				<div class="row gx-0">
 				<div class="col-lg-6">
 					<a class="portfolio-item" href="/privato/news/RichiediCreaNews">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">News</div>
-								<p class="mb-0">Scopri le storie di chi ha creduto nella
-									nostra mission</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
+						</div> <img class="img-fluid" src="assets/img/port1.jpg" alt="..." />
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="portfolio-item" href="">
+						<div class="caption">
+							<div class="caption-content">
+								<div class="h1"></div>
+							</div>
+						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
 					</a>
 				</div>
 			</div>
 		</div>
-				<div class="col-lg-6">
-					<a class="portfolio-item" href="/privato/abbonamento/DettagliAbbonamento">
-						<div class="caption">
-							<div class="caption-content">
-								<div class="h1">Rinnova Abbonamento</div>
-								<p class="mb-0">Visualizza le informazioni e i servizi
-									offerti dalla sede a te più comoda</p>
-							</div>
-						</div> <img class="img-fluid" src="assets/img/port3.jpg" alt="..." />
-					</a>
-				</div>
-				<div class="col-lg-6">
-					<a class="portfolio-item" href="/privato/Prova">
-						<div class="caption">
-							<div class="caption-content">
-								<div class="h1">Visualizza Dettagli Abbonamento</div>
-								<p class="mb-0">Scopri le storie di chi ha creduto nella
-									nostra mission</p>
-							</div>
-						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
-					</a>
-				</div>
+
 	</section>
 	
 	<!-- Footer-->

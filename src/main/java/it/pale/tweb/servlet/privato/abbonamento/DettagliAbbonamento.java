@@ -1,24 +1,26 @@
-package it.pale.tweb.servlet.privato.cliente;
+package it.pale.tweb.servlet.privato.abbonamento;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 
+import it.pale.tweb.dao.beans.AbbonamentoDAO;
+import it.pale.tweb.dao.beans.Abbonamento;
+
 /**
- * Servlet implementation class RichiediAggiungiCliente
+ * Servlet implementation class DettagliAbbonamento
  */
-@WebServlet("/privato/cliente/RichiediAggiungiCliente")
-public class RichiediAggiungiCliente extends HttpServlet {
+@WebServlet("/privato/abbonamento/DettagliAbbonamento")
+public class DettagliAbbonamento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RichiediAggiungiCliente() {
+    public DettagliAbbonamento() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,9 +30,7 @@ public class RichiediAggiungiCliente extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//QUI NON HO NECESSITA' DI SAPERE A QUALE PALESTRA APPARTIENE 
 		
-		request.getRequestDispatcher("/WEB-INF/privato/cliente/aggiungiCliente.jsp").forward(request, response);
-	
 	}
+
 }

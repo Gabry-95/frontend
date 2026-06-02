@@ -160,16 +160,10 @@ public class AbbonamentoDAO {
 		try {
 			
 			ps = conn.prepareStatement(query);
-			Date oggi = new Date();
-			long mil= oggi.getTime();
-
-			mil += 30L*24*60*60*1000; //INTEGER OVERFLOW
-			
-			Date scadenza= new Date(mil);
-		
 
 			//converto da util.Date a sql.Date 
-			ps.setDate(1, new java.sql.Date(scadenza.getTime()));
+			java.sql.Date data=new java.sql.Date(abbonamento.getDataScadenza().getTime());
+			ps.setDate(1, data);
 			ps.setInt(2, abbonamento.getFattura());
 
 			int tmp = ps.executeUpdate();
