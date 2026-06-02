@@ -34,7 +34,7 @@ public class CreaNews extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	//ADATTAMENTO DELL'INSERIMENTO DELL'ID DELLA PALESTRA NEL CASO IN CUI SI VOGLIA USARE IN QUESTA SERVLET:
-	//HttpSession session= reques.getSession();
+	//HttpSession session= request.getSession();
 	//int id=(int) session.getAttribute("Palestra");
 	
 	//lettura input
@@ -46,19 +46,14 @@ public class CreaNews extends HttpServlet {
 	//elaborazione
 	int id=Integer.parseInt(ids);
 	int palestra=Integer.parseInt(palestras);
-	Date dataNascita= null;
-	try {
-		dataNascita=Utils.stringToDate(dataNascitaS);
-	}
-	catch (ParseException e){
-	e.printStackTrace();
-	}
+
 	News news= new News();
+	
 	NewsDAO newsDAO= new NewsDAO();
 	
 	news.setId(id);
 	news.setTesto(testo);
-	news.setData(dataNascita);
+	news.setData(new java.util.Date());
 	news.setPalestra(palestra);
 	//news.setPalestra(id); FINE ADATTAMENTO
 	boolean esito=newsDAO.salva(news);

@@ -1,22 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page import="it.pale.tweb.dao.utils.Utils"%>
-	<%@page import="it.pale.tweb.dao.beans.Palestra"%>
-<%@page import="it.pale.tweb.dao.beans.PalestraDAO"%>
-<%@page import="java.util.Vector"%>
-	
+<%@page import="it.pale.tweb.dao.beans.Palestra"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <%
-	Vector<Palestra> palestre = (Vector<Palestra>)request.getAttribute("palestre");
-	%>
+  
+    Palestra p = (Palestra) request.getAttribute("PalestraSingola"); //andrà fatto un vettore, non funzionava 
+%>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Crea news</title>
+<title>Crea News</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -31,47 +28,51 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
+<link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
-<%
 
-%>
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 
-	<form action="/privato/cliente/CreaNews" method="get">
-		<div class="row">
-		<div class="col">
-				<input type="text" class="form-control" placeholder="Id"
-					name="id">
-			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Testo"
-					name="testo">
-			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Data"
-					name="data">
-			</div>
-			<div class="col">
-			
-				<select name="idPalestra" class="custom-select">
-				<%
-				for (Palestra p: palestre) {
-				%>
-				<option value="<%=p.getId()%>"><%=p.getCitta()%> ,
-					<%=p.getVia()%>, <%=p.getCap()%>
-				</option>
-				<%
-				} 
-				%>
-			</select>
-			</div>
-			<button class="btn btn-primary btn-xl" id="crea-news" type="submit">Crea</button>
+	<div class="container py-5">
+		<div class="container px-4 px-lg-5 text-center">
+			<h1 class="mb-1">Crea Una Nuova News</h1>
 		</div>
-	</form>
+		<form class="row g-3" action="/privato/news/CreaNews" method="get">
+			<div class="col-md-6">
+				<label for="id" class="form-label" required>ID </label> <input
+					type="text" class="form-control" name="Id" required>
+			</div>
+			<div class="col-md-6">
+				<label for="testo" class="form-label" required>Testo </label> <input
+					type="text" class="form-control" name="testo" required>
+			</div>
+			<div class="col-md-6">
+				<label for="data" class="form-label" required>Data </label> <input
+					type="date" class="form-control" name="data" required>
+			</div>
+			<div class="col-md-6">
+			<label class="form-label fw-bold">Palestra di Riferimento</label>
+			<% if (p != null) { %>
+				<input type="text" class="form-control" 
+					   value="<%= p.getCitta() %> - <%= p.getVia() %>" >
+				
+				<input type="hidden" name="palestra" value="<%= p.getId() %>">
+			<% } else { %>
+				<input type="text" class="form-control" value="Errore: Nessuna palestra in sessione" >
+			<% } %>
+		</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Crea</button>
+			</div>
+		</form>
+	</div>
 
+	<br>
+	<br>
+	<br>
+	<br>
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
 

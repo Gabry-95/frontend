@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+import it.pale.tweb.dao.beans.News;
+import it.pale.tweb.dao.beans.NewsDAO;
 import it.pale.tweb.dao.beans.Palestra;
 
 /**
@@ -31,11 +33,24 @@ public class RichiediCreaNews extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		int id=(int)session.getAttribute("Palestra");
+		int idPalestra=(int)session.getAttribute("Palestra");
 		Palestra p= new Palestra();
-		p.setId(id);
+		p.setId(idPalestra);
 		
-		request.setAttribute("palestra", p);
+		//per impostare l'id di una news
+		
+//		NewsDAO newsDAO= new NewsDAO();
+//		News news= new News();
+//		
+//		int prossimoID=NewsDAO.get(news);
+//		news.setId(prossimoID);
+//		
+		//per la data di oggi:
+//		java.util.Date dataOggi = new java.util.Date();
+//	    news.setData(dataOggi);
+		
+		request.setAttribute("Palestra", p);
+//		request.setAttribute("News", news);
 
 		request.getRequestDispatcher("/WEB-INF/privato/news/creaNews.jsp").forward(request, response);
 	}
