@@ -100,10 +100,10 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="">
+					<a class="portfolio-item" href="/privato/corsi/RichiediCorso">
 						<div class="caption">
 							<div class="caption-content">
-								<div class="h1"></div>
+								<div class="h1">Corsi</div>
 							</div>
 						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
 					</a>

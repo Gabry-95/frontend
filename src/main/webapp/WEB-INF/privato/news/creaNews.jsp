@@ -6,7 +6,7 @@
 <head>
 <%
   
-    Palestra p = (Palestra) request.getAttribute("PalestraSingola"); //andrà fatto un vettore, non funzionava 
+    Palestra p = (Palestra) request.getAttribute("Palestra"); 
 %>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -39,30 +39,17 @@
 		<div class="container px-4 px-lg-5 text-center">
 			<h1 class="mb-1">Crea Una Nuova News</h1>
 		</div>
-		<form class="row g-3" action="/privato/news/CreaNews" method="get">
-			<div class="col-md-6">
-				<label for="id" class="form-label" required>ID </label> <input
-					type="text" class="form-control" name="Id" required>
+		<form class="row g-3" action="/privato/news/CreaNews" method="post">
+
+			<div class="mb-4">
+				<label for="testo" class="form-label text-secondary">Contenuto
+					della News</label>
+
+				<textarea class="form-control" name="testo" rows="6"
+					placeholder="Scrivi qui il testo esteso della notizia che gli utenti leggeranno..."
+					style="resize: none; border-radius: 10px;" required></textarea>
 			</div>
-			<div class="col-md-6">
-				<label for="testo" class="form-label" required>Testo </label> <input
-					type="text" class="form-control" name="testo" required>
-			</div>
-			<div class="col-md-6">
-				<label for="data" class="form-label" required>Data </label> <input
-					type="date" class="form-control" name="data" required>
-			</div>
-			<div class="col-md-6">
-			<label class="form-label fw-bold">Palestra di Riferimento</label>
-			<% if (p != null) { %>
-				<input type="text" class="form-control" 
-					   value="<%= p.getCitta() %> - <%= p.getVia() %>" >
-				
-				<input type="hidden" name="palestra" value="<%= p.getId() %>">
-			<% } else { %>
-				<input type="text" class="form-control" value="Errore: Nessuna palestra in sessione" >
-			<% } %>
-		</div>
+
 			<div class="col-12">
 				<button type="submit" class="btn btn-primary">Crea</button>
 			</div>

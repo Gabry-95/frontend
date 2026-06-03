@@ -34,7 +34,8 @@ public class NewsDAO {
 	}
 
 	public boolean salva(News news) {
-		String query = "INSERT INTO News VALUES ( ?, ?, ?, ?)";
+		//siccome l'id è autoincrementale:
+		String query = "INSERT INTO News (testo, data, palestra) VALUES (?, ?, ?) ";
 		boolean esito = false;
 
 		PreparedStatement ps;
@@ -42,12 +43,12 @@ public class NewsDAO {
 		try {
 			ps = conn.prepareStatement(query);
 
-			ps.setInt(1, news.getId());
-			ps.setString(2, news.getTesto());
+//			ps.setInt(1, news.getId());
+			ps.setString(1, news.getTesto());
 
 			java.sql.Date data=new java.sql.Date(news.getData().getTime());
-			ps.setDate(3, data);
-			ps.setLong(4, news.getPalestra());
+			ps.setDate(2, data);
+			ps.setLong(3, news.getPalestra());
 
 			int tmp = ps.executeUpdate();
 			if (tmp == 1)
@@ -93,7 +94,7 @@ public class NewsDAO {
 	}
 
 	public Vector<News> getAll() {
-		String query = "SELECT * FROM News order by data";
+		String query = "SELECT * FROM News order by data ";
 
 		Vector<News> res = new Vector<News>();
 		PreparedStatement ps;
@@ -137,7 +138,7 @@ public class NewsDAO {
 	}
 	
 	public Vector<News> getNews(Palestra p) {
-		String query = "SELECT * FROM News WHERE palestra=? order by data DESC";
+		String query = "SELECT * FROM News WHERE palestra=? order by data DESC LIMIT 5";
 
 		Vector<News> res = new Vector<News>();
 		PreparedStatement ps;
