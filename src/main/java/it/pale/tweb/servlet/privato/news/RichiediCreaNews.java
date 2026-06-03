@@ -32,25 +32,7 @@ public class RichiediCreaNews extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		int idPalestra=(int)session.getAttribute("Palestra");
-		Palestra p= new Palestra();
-		p.setId(idPalestra);
-		
-		//per impostare l'id di una news
-		
-//		NewsDAO newsDAO= new NewsDAO();
-//		News news= new News();
-//		
-//		int prossimoID=NewsDAO.get(news);
-//		news.setId(prossimoID);
-//		
-		//per la data di oggi:
-//		java.util.Date dataOggi = new java.util.Date();
-//	    news.setData(dataOggi);
-		
-		request.setAttribute("Palestra", p);
-//		request.setAttribute("News", news);
+
 
 		request.getRequestDispatcher("/WEB-INF/privato/news/creaNews.jsp").forward(request, response);
 	}
