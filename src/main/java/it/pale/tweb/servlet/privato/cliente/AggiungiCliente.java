@@ -46,7 +46,7 @@ public class AggiungiCliente extends HttpServlet {
 		boolean esito= cDAO.salva(c);
 		
 		if(esito) {
-			response.sendRedirect("RichiediAggiungiCliente");
+			request.getRequestDispatcher("/WEB-INF/privato/cliente/aggiungiCliente.jsp").forward(request, response);
 		}
 		else {
 			request.getRequestDispatcher("/WEB-INF/errore1.jsp").forward(request, response);

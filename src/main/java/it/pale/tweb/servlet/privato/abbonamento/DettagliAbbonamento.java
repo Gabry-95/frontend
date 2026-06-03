@@ -6,9 +6,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Vector;
 
 import it.pale.tweb.dao.beans.AbbonamentoDAO;
 import it.pale.tweb.dao.beans.Abbonamento;
+import it.pale.tweb.dao.beans.Corso;
+import it.pale.tweb.dao.beans.CorsoDAO;
+import it.pale.tweb.dao.beans.Cliente;
 
 /**
  * Servlet implementation class DettagliAbbonamento
@@ -30,7 +34,29 @@ public class DettagliAbbonamento extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Integer matricola=Integer.parseInt(request.getParameter("matricola"));
 		
+		if(matricola!=null) {
+			
+			Cliente cliente= new Cliente();
+			CorsoDAO cDAO= new CorsoDAO();
+			Vector<Corso> corsiSeguiti= new Vector<>();
+			cliente.setMatricola(matricola);
+			AbbonamentoDAO aDAO= new AbbonamentoDAO();
+			Abbonamento a= new Abbonamento();
+			
+			try {
+				a=aDAO.InfoAbbonamento(cliente);
+				if(a.getLimiteIngressi()==null) {
+					corsiSeguiti=cDAO.getCorsiSeguiti(a);
+				}
+			}catch(Exception e) {
+				response.sendRedirect("/WEB-INF/privato/abbonamento/errore.jsp");
+			}
+			request.setAttribute("corsiSeguiti", corsiSeguiti);
+			request.setAttribute("abbonamento", a);
+		}
+		request.getRequestDispatcher("/WEB-INF/privato/abbonamento/dettagliAbbonamento.jsp").forward(request, response);
 	}
 
 }
