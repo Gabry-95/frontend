@@ -220,4 +220,28 @@ public class CorsoDAO {
 		return totale;
 
 	}
+	
+	//Dato un abbonamento restituisci la lista dei corsi seguiti
+	public Vector<Corso> getCorsiSeguiti(Abbonamento a) {
+		String query = "SELECT c.ID AS \"id\", c.Nome AS \"nome\", c.Costo AS \"costo\", c.Tipo AS \"tipo\", c.Palestra AS \"palestra\" FROM corso AS c "
+				+ "JOIN frequenta ON frequenta.Corso = c.ID "
+				+ "WHERE frequenta.Abbonamento=?;";
+
+		Vector<Corso> res = new Vector<Corso>();
+		PreparedStatement ps;
+		conn = DBManager.startConnection();
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, a.getFattura());
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Corso corso = recordToCorso(rs);
+				res.add(corso);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBManager.closeConnection();
+		return res;
+	}
 }

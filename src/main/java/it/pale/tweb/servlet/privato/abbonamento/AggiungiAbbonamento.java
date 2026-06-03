@@ -73,7 +73,8 @@ public class AggiungiAbbonamento extends HttpServlet {
 		}
 		
 		if(esitoA && esitoF) {
-			response.sendRedirect("RichiediAggiungiAbbonamento");
+			request.setAttribute("matricola", matricola);
+			request.getRequestDispatcher("/WEB-INF/privato/abbonamento/DettagliAbbonamento").forward(request, response);
 		}
 		else {
 			request.getRequestDispatcher("/WEB-INF/errore1.jsp").forward(request, response);
