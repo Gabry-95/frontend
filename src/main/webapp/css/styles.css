@@ -11583,3 +11583,10 @@ a.sponsor-card:hover {
 #dettagli{
 	margin-bottom: 115px;
 }
+
+.masthead-avatar.mb-5{
+	
+	 max-height: 70%;    /* Dice alla foto: "Non puoi essere più alta del tuo recinto (80px)" */
+    max-width: 70%;
+    display: center;
+}

@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@page import="it.pale.tweb.dao.beans.Palestra"%>
+<%@page import="it.pale.tweb.dao.beans.Corso"%>
+<%@page import="java.util.Vector"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<%
+  Palestra p = (Palestra) request.getAttribute("Palestra"); //creiamo un oggetto palestra che conterrà l'attributo Palestra della sessione
+Vector<Corso> corsi= (Vector<Corso>) request.getAttribute("corsi");
+%>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -35,94 +40,84 @@
 	<header class="masthead bg-primary text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5" src="/assets/img/uni_logo.png"
-				alt="University logo" />
+			<img class="masthead-avatar mb-5" src="/assets/logo.ico"  />
+			<!--adatta la dimensione del logo, e scrivi "logo" non log  -->
 			<!-- Masthead Heading-->
-			<h1 class="masthead-heading text-uppercase mb-0">Manage students</h1>
+			<h1 class="masthead-heading text-uppercase mb-0">Gestisci I
+				Corsi</h1>
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
-				<div class="divider-custom-icon">
-					<i class="fas fa-star"></i>
-				</div>
+				<div class="divider-custom-icon"></div>
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
 			<p></p>
 		</div>
 
-		<div class="col-6">
+		<!-- 	<div class="col-6">
 			<p class="masthead-subheading font-weight-light mb-0">
-<form class="row g-3" action="/privato/corso/Corso" method="post">
+			<form class="row g-3" action="/privato/corsi/Corsi" method="post"> forse non va messo QUI
 				<a href="aggiungi.html">
 					<button type="button" class="btn btn-secondary btn-lg">Add
 						student</button>
 				</a>
 
-			</p>
-		</div>
+				</p>
+		</div> -->
 
 		<p></p>
 		<div class="container align-items-center">
 			<table class="table table-secondary table-hover">
 				<thead>
 					<tr>
-						<th scope="col">Registration Number</th>
-						<th scope="col">First Name</th>
-						<th scope="col">Date of Birth</th>
-						<th scope="col">Degree</th>
-						<th scope="col">Modify</th>
-						<th scope="col">Eliminate</th>
+						<th scope="col">Id</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Costo</th>
+						<th scope="col">Tipo</th>
+						<!-- <th scope="col">Modify</th> -->
+						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
-					<%-- <%
-					for (Studente s : studenti) {
+					<%
+					for (Corso c : corsi) {
 					%>
 					<tr>
-						<td>
-							<%=
-							s.getMatricola()
-							%>
-						</td>
-						<td><%= s.getNome() %></td>
-						<td><%= Utils.dateToString(s.getData_di_nascita()) %></td>
-						<% 
-						String CdlNome="Nessuno";
-						if (s.getCdl()!=null){
-							for (CDL c:corsi){
-								if(c.getId()==s.getCdl()){
-									CdlNome=c.getNome();
-									break;
-								}
-								
-							}
-								
-						}
-						%>
-						<td><%= CdlNome %></td>
-						<td><a href="RichiediModifica?matricola=<%= s.getMatricola()%>"> <!-- Visto che ogni pagina deve riferirsi ad uno specifico studente si passa un parametro (l'id); inoltre dobbiamo trovare un modo per passare il parametro con metodo POST e non GET -->
+						<td><%=
+							c.getId()
+							%></td>
+						<td><%= c.getNome() %></td>
+						<td><%= c.getCosto()%></td>
+						<td><%= c.getTipo()%></td>
+						
+				
+						<%-- <td><a
+							href="RichiediModifica?matricola=<%= s.getMatricola()%>"> <!-- Visto che ogni pagina deve riferirsi ad uno specifico studente si passa un parametro (l'id); inoltre dobbiamo trovare un modo per passare il parametro con metodo POST e non GET -->
 								<button type="button" class="btn btn-secondary btn-lg">Modify</button>
-						</a></td>
-						<td><a href="/privato/studente/Elimina?matricola=<%= s.getMatricola()%>">
-								<button type="button" class="btn btn-secondary btn-lg">Eliminate</button>
+						</a></td> --%>
+						<td><a
+							href="/privato/corsi/Corsi?Id=<%= c.getId()%>">
+								<button type="button" class="btn btn-secondary btn-lg">Elimina</button>
 						</a></td>
 
 					</tr>
 					<%
 					}
-					%> --%>
+					%>
 				</tbody>
 			</table>
 			</form>
 		</div>
-	<!-- Footer-->
-	<%@ include file="/WEB-INF/Footer.jsp"%>
 
-	<!-- Bootstrap core JS-->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- Core theme JS-->
-	<script src="js/scripts.js"></script>
+</header>
+		<!-- Footer-->
+		<%@ include file="/WEB-INF/Footer.jsp"%>
+
+		<!-- Bootstrap core JS-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Core theme JS-->
+		<script src="js/scripts.js"></script>
 </body>
 </html>
