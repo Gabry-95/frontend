@@ -96,7 +96,7 @@
 					</a>
 				</div>
 				<div class="col-lg-6">
-					<a class="portfolio-item" href="/privato/corsi/RichiediCorso">
+					<a class="portfolio-item" href="/privato/corsi/RichiediCorsi">
 						<div class="caption">
 							<div class="caption-content">
 								<div class="h1">Corsi</div>
