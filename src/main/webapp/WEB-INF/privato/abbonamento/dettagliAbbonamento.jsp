@@ -35,109 +35,126 @@
 <body id="page-top">
 
 	<%
-	Vector<Corso> corsiSeguiti= (Vector<Corso>) request.getAttribute("corsiSeguiti");
-	Abbonamento a=(Abbonamento)request.getAttribute("abbonamento"); 
+	Vector<Corso> corsiSeguiti = (Vector<Corso>)request.getAttribute("corsiSeguiti");
+	Abbonamento a = (Abbonamento)request.getAttribute("abbonamento");
+	Boolean scadenza=(Boolean)request.getAttribute("scadenza");
 	%>
 
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
-
-
-	<div class="container px-4 px-lg-5 text-center">
-		<h1 class="mb-1">Inserisci matricola Abbonato</h1>
+	
+	<div class="container py-5 text-center">
+		<h1 class="mb-1">Dettagli Abbonamento</h1>
 	</div>
-
-	<form class="row g-3" action="/privato/abbonamento/DettagliAbbonamento"
-		method="get">
-		<div class="col-md-6">
-			<label for="matricola" class="form-label" required>Matricola
-				Utente</label> <input type="text" class="form-control" name="matricola"
-				required>
-		</div>
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary">Cerca
-				Matricola</button>
-		</div>
-	</form>
+	
+	<div class="container py-5">
+		<form class="row g-3"
+			action="/privato/abbonamento/DettagliAbbonamento" method="get">
+			<div class="col-md-6">
+				<label for="matricola" class="form-label" >Inserire Matricola
+					Utente</label> <input type="text" class="form-control" name="matricola"
+					required>
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Cerca
+					Matricola</button>
+			</div>
+		</form>
+	</div>
 
 	<%
 	if (a != null) {
 	%>
+
 	<div class="container py-5">
-		<div class="col-md-6">
-			<label for="fattura" class="form-label" required>Codice
+		<div class="container py-3">
+			<label for="fattura" class="form-label">Codice
 				Fattura</label> <input type="text" class="form-control"
-				value="<%= a.getFattura() %>" readonly>
+				value="<%=a.getFattura()%>" readonly>
 		</div>
-		<div class="col-md-6">
-			<label for="matricola" class="form-label" required>Matricola
+		<div class="container py-3">
+			<label for="matricola" class="form-label" >Matricola
 				Utente</label> <input type="text" class="form-control"
-				value="<%= a.getCliente() %>" readonly>
+				value="<%=a.getCliente()%>" readonly>
 		</div>
-		<div class="col-md-6">
+		<div class="container py-3">
 			<label for="inputCity" class="form-label">Data Scadenza</label> <input
-				type="date" class="form-control" value="<%= a.getDataScadenza() %>"
+				type="date" class="form-control" value="<%=a.getDataScadenza()%>"
 				readonly>
 		</div>
-		<div class="col-md-4">
+		<div class="container py-3">
 			<label for="inputState" class="form-label">Tipo Abbonamento</label> <input
-				type="text" class="form-control" value="<%= a.getTipo() %>" readonly>
+				type="text" class="form-control" value="<%=a.getTipo()%>" readonly>
 		</div>
-		<div class="col-md-4">
+		<div class="container py-3">
 			<label for="inputState" class="form-label">Costo</label> <input
-				type="text" class="form-control" value="<%= a.getCosto() %>"
+				type="text" class="form-control" value="<%=a.getCosto()%>" readonly>
+		</div>
+		<%
+		if (a.getLimiteIngressi() != 0) {
+		%>
+
+		<div class="container py-3">
+			<label for="inputState" class="form-label">Limite Ingressi</label> <input
+				type="text" class="form-control" value="<%=a.getLimiteIngressi()%>"
 				readonly>
 		</div>
-		<%if(a.getLimiteIngressi()!=null){ %>
-		<div class="col-md-4">
-			<label for="inputState" class="form-label">Limite Ingressi</label> <input
-				type="text" class="form-control"
-				value="<%= a.getLimiteIngressi() %>" readonly>
-		</div>
-		<% }
-		
-		else{ 
-		%>
-		<div class="container px-4 px-lg-5 text-center">
+	<%
+		}
+		else if (!(corsiSeguiti.isEmpty())) {
+	%>
+		<div class="container py-3 text-center">
 			<h3 class="mb-1">Corsi Seguiti</h3>
 		</div>
-		<div class="container py-5">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Nome</th>
-						<th scope="col">Tipo</th>
-						<th scope="col">Costo</th>
-						<th scope="col">ID Corso</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%
-				int k=0;
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Costo</th>
+					<th scope="col">ID Corso</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				int k = 0;
 				for (Corso c : corsiSeguiti) {
-					
 				%>
-					<tr>
-						<td><%=k+1%></td>
-						<td><%=c.getTipo()%></td>
-						<td><%=c.getNome()%></td>
-						<td><%=c.getCosto()%> €</td>
-						<td><%=c.getId()%></td>
-					</tr>
-					<%
-					k++;
+				<tr>
+					<td><%=k + 1%></td>
+					<td><%=c.getTipo()%></td>
+					<td><%=c.getNome()%></td>
+					<td><%=c.getCosto()%> €</td>
+					<td><%=c.getId()%></td>
+				</tr>
+				<%
+				k++;
 				}
 				%>
-				</tbody>
-			</table>
-		</div>
-		<%} %>
+			</tbody>
+		</table>
+	<%
+		}
+	%>
+	
+	<%if(scadenza){ %>
+	<div class="container py-5">
+		<form class="row g-3"
+			action="/privato/abbonamento/RinnovoAbbonamento" method="get">
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary" name="fattura" value="<%=a.getFattura()%>">Rinnova Abbonamento</button>
+			</div>
+		</form>
 	</div>
+	<% } %>
+	
 	<%
 	}
 	%>
-
+	</div>
+	<br> <br> <br> <br>
+	
 	<!-- Footer-->
 	<%@ include file="/WEB-INF/Footer.jsp"%>
 

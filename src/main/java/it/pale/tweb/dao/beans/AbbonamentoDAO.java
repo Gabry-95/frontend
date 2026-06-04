@@ -160,9 +160,15 @@ public class AbbonamentoDAO {
 		try {
 			
 			ps = conn.prepareStatement(query);
-
+			
+			//Creo data scadenza da un mese ad oggi
+			Date oggi = new Date();
+			long mil= oggi.getTime();
+			mil += 30L*24*60*60*1000;
+			Date scadenza= new Date(mil);
+			
 			//converto da util.Date a sql.Date 
-			java.sql.Date data=new java.sql.Date(abbonamento.getDataScadenza().getTime());
+			java.sql.Date data=new java.sql.Date(scadenza.getTime());
 			ps.setDate(1, data);
 			ps.setInt(2, abbonamento.getFattura());
 
@@ -203,26 +209,30 @@ public class AbbonamentoDAO {
 		return res;
 	}
 	
-	//Elimina gli abbonamenti scaduti più di due anni fa
-//	public boolean AbbonamentiScaduti (Abbonamento abbonamento) {
-//		String query="DELETE FROM Abbonamento WHERE  dataScadenza < DATE_SUB(NOW(), INTERVAL 2 YEAR)"; //????
-//		boolean esito = false;
-//
-//		PreparedStatement ps;
-//		conn = DBManager.startConnection();
-//		try {
-//			ps = conn.prepareStatement(query);
-//			//ps.setDate(1, new java.sql.Date(abbonamento.getDataScadenza().getTime()));
-//
-//			int tmp = ps.executeUpdate();
-//			if (tmp == 1)
-//				esito = true;
-//
-//		} catch (SQLException e) {
-//			esito = false;
-//			e.printStackTrace();
-//		}
-//		DBManager.closeConnection();
-//		return esito;
-//	}
+	//Stabilisci se un abbonamento è scaduto
+	public boolean AbbonamentoScaduto(Abbonamento abbonamento) {
+		String query="SELECT * FROM Abbonamento "
+				+ "WHERE abbonamento.Fattura=? AND DATE(abbonamento.DataScadenza) < DATE(NOW()); ";
+		boolean esito = false;
+		Abbonamento res = null;
+
+		PreparedStatement ps;
+		conn = DBManager.startConnection();
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, abbonamento.getFattura());
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				res = recordToAbbonamento(rs);
+				if(res!=null) {
+					esito=true;
+				}
+			}
+		} catch (SQLException e) {
+			esito = false;
+			e.printStackTrace();
+		}
+		DBManager.closeConnection();
+		return esito;
+	}
 }

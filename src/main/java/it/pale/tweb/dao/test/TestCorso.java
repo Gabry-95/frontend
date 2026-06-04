@@ -12,6 +12,8 @@ public class TestCorso {
 	public static void main (String [] args) {
 		CorsoDAO corsoDAO= new CorsoDAO();
 		Corso corso= new Corso();
+		Abbonamento a= new Abbonamento();
+		a.setFattura(5);
 
 		corso.setId(90);
 		corso.setNome("Yoga");
@@ -69,18 +71,23 @@ public class TestCorso {
 
 
 		//Costo di un corso
-		Corso c1= new Corso();
-		c1.setId(2);
-		Corso c2= new Corso();
-		c2.setId(3);
-	
-		Vector <Corso> lista = new Vector<>();
-		lista.add(c1);
-		lista.add(c2);
-	
-		int costo=0;
-		costo=corsoDAO.costoCorsiAbbonamento(lista);
-		System.out.println("il costo di un corso è " + costo);
+//		Corso c1= new Corso();
+//		c1.setId(2);
+//		Corso c2= new Corso();
+//		c2.setId(3);
+//	
+//		Vector <Corso> lista = new Vector<>();
+//		lista.add(c1);
+//		lista.add(c2);
+//	
+//		int costo=0;
+//		costo=corsoDAO.costoCorsiAbbonamento(lista);
+//		System.out.println("il costo di un corso è " + costo);
+		
+		Vector<Corso>corsiSeguiti=corsoDAO.getCorsiSeguiti(a);
+		for(Corso c: corsiSeguiti) {
+			System.out.print(c.getNome());
+		}
 
 	}
 }

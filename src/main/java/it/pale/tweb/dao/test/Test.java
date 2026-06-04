@@ -39,10 +39,10 @@ public class Test {
 //		abbonamento= abbonamentoDAO.get(abbonamento);
 //		System.out.println("Riletto " + abbonamento);
 //		//METODO GETALL
-		Vector<Abbonamento> Abbonamentos= abbonamentoDAO.getAll();
-		for (Abbonamento a:Abbonamentos) {
-			System.out.println(a);
-		}
+//		Vector<Abbonamento> Abbonamentos= abbonamentoDAO.getAll();
+//		for (Abbonamento a:Abbonamentos) {
+//			System.out.println(a);
+//		}
 //		abbonamentoDAO.elimina(abbonamento);
 //		abbonamento=abbonamentoDAO.get(abbonamento);
 //		System.out.println(abbonamento);
@@ -55,11 +55,16 @@ public class Test {
 //		System.out.println("L'abbonamento è stato rinnovato " + abbonamento);
 //		
 		//INFO ABBONAMENTO
-		Cliente cliente= new Cliente();
-		cliente.setMatricola(3);
-		Abbonamento info= abbonamentoDAO.InfoAbbonamento(cliente);
-		System.out.println("Tipo " +info.getTipo() + "Data :" +info.getDataScadenza() + "Limite ingressi: "+ info.getLimiteIngressi());
+//		Cliente cliente= new Cliente();
+//		cliente.setMatricola(3);
+//		Abbonamento info= abbonamentoDAO.InfoAbbonamento(cliente);
+//		System.out.println("Tipo " +info.getTipo() + "Data :" +info.getDataScadenza() + "Limite ingressi: "+ info.getLimiteIngressi());
 		
+		//ABBONAMENTO SCADUTO
+		abbonamento.setFattura(1);
+		boolean scaduto=abbonamentoDAO.AbbonamentoScaduto(abbonamento);
+		System.out.println(scaduto);
+	
 	}
 }
 

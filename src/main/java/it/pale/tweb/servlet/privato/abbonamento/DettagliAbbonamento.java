@@ -34,25 +34,30 @@ public class DettagliAbbonamento extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Integer matricola=Integer.parseInt(request.getParameter("matricola"));
+		String m=request.getParameter("matricola");
 		
-		if(matricola!=null) {
+		if(m!=null) {
 			
+			Integer matricola=Integer.parseInt(m);
 			Cliente cliente= new Cliente();
 			CorsoDAO cDAO= new CorsoDAO();
 			Vector<Corso> corsiSeguiti= new Vector<>();
 			cliente.setMatricola(matricola);
 			AbbonamentoDAO aDAO= new AbbonamentoDAO();
 			Abbonamento a= new Abbonamento();
+			boolean scadenza=false;
 			
 			try {
 				a=aDAO.InfoAbbonamento(cliente);
-				if(a.getLimiteIngressi()==null) {
+				scadenza=aDAO.AbbonamentoScaduto(a);
+				if(a.getLimiteIngressi()==0) {
 					corsiSeguiti=cDAO.getCorsiSeguiti(a);
 				}
 			}catch(Exception e) {
 				response.sendRedirect("/WEB-INF/privato/abbonamento/errore.jsp");
+				return;
 			}
+			request.setAttribute("scadenza", scadenza);
 			request.setAttribute("corsiSeguiti", corsiSeguiti);
 			request.setAttribute("abbonamento", a);
 		}

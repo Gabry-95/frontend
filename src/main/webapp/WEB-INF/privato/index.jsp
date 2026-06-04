@@ -29,10 +29,6 @@
 
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
-
-	<% int palestra=(int)session.getAttribute("Palestra"); %>
-	
-	<p>Palestra: <%=palestra %></p>
 	
 	<!-- Portfolio-->
 	<section class="content-section" id="portfolio">
