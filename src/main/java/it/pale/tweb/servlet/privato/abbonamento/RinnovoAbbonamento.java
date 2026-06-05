@@ -39,14 +39,14 @@ public class RinnovoAbbonamento extends HttpServlet {
 		try {
 			esito=aDAO.rinnovaAbbonamento(a);
 		}catch(Exception e) {
-			request.getRequestDispatcher("/WEB-INF/errore.jsp").forward(request, response);
+			response.sendRedirect("/WEB-INF/errore.jsp");
 			return;
 		}
 		if(esito) {
 			request.getRequestDispatcher("/WEB-INF/privato/abbonamento/dettagliAbbonamento.jsp").forward(request, response);
 		}
 		else {
-			request.getRequestDispatcher("/WEB-INF/errore.jsp").forward(request, response);
+			response.sendRedirect("/WEB-INF/errore.jsp");
 			return;
 		}
 		

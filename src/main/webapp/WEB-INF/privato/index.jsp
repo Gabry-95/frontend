@@ -30,6 +30,9 @@
 	<!-- Navigation-->
 	<%@ include file="/WEB-INF/privato/navbarPrivato.jsp"%>
 	
+	<p>Palestra: <%= request.getSession().getAttribute("Palestra") %></p>
+
+	
 	<!-- Portfolio-->
 	<section class="content-section" id="portfolio">
 		<div class="container px-4 px-lg-5">

@@ -91,7 +91,7 @@
 				type="text" class="form-control" value="<%=a.getCosto()%>" readonly>
 		</div>
 		<%
-		if (a.getLimiteIngressi() != 0) {
+		if (a.getLimiteIngressi()!=null) {
 		%>
 
 		<div class="container py-3">
