@@ -31,11 +31,6 @@ public class Corsi extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//stabiliamo una sessione o ne prendiamo una già attiva
-//		HttpSession session= request.getSession();
-//		//creiamo una variabile id contenuta dal attributo palestra recuperato dalla sessione (palestra=1)
-//		int idPalestra= (int) session.getAttribute("Palestra");
-		
 		//1. lettura input
 		String ids=request.getParameter("id");
 		
@@ -52,31 +47,6 @@ public class Corsi extends HttpServlet {
 		//4. lettura output
 		response.sendRedirect("RichiediCorsi");
 		
-//		//1. lettura input, leggiamo solo i dati che vogliamo mostrare nella view
-//				String idCorsos= request.getParameter("id");
-//				String nome=request.getParameter("nome");
-//				String costoS=request.getParameter("corso");
-//				String tipo=request.getParameter("tipo");
-//				//per la palestra è scontato a quale ci stiamo riferendo, è quella della sessione
-//				//2. elaborazione
-//				int idCorso=Integer.parseInt(idCorsos);
-//				int costo =Integer.parseInt(costoS);
-//
-//				Corso corso= new Corso();
-//				CorsoDAO corsoDAO= new CorsoDAO();
-//
-//				corso.setId(idCorso);
-//				corso.setNome(nome);
-//				corso.setCosto(costo);
-//				corso.setTipo(tipo);
-//
-//				boolean esito=corsoDAO.salva(corso);
-////				request.setAttribute("Palestra", p);
-//				if(esito) {
-//					request.getRequestDispatcher("/WEB-INF/privato/corsi/corsi.jsp").forward(request, response);
-//				} else {
-//					request.getRequestDispatcher("/WEB-INF/errore3.jsp").forward(request, response);
-//				}
 
 		
 	}

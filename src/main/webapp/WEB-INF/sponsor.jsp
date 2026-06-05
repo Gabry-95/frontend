@@ -43,7 +43,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/prozis_logo.jpg" alt="">
+						<img src="assets/img/sponsor/prozis_logo.jpg" alt="">
 					</div>
 
 					<div
@@ -84,7 +84,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/Tsunami.jpg" alt="">
+						<img src="assets/img/sponsor/Tsunami.jpg" alt="">
 					</div>
 
 					<div
@@ -126,7 +126,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/GorillaWear.jpg" alt="">
+						<img src="assets/img/sponsor/GorillaWear.jpg" alt="">
 					</div>
 
 					<div
@@ -170,7 +170,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/myprotein-logo.jpg" alt="">
+						<img src="assets/img/sponsor/myprotein-logo.jpg" alt="">
 					</div>
 
 					<div
@@ -215,7 +215,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/gymshark_logo.jpg" alt="">
+						<img src="assets/img/sponsor/gymshark_logo.jpg" alt="">
 					</div>
 
 					<div
@@ -257,7 +257,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/underArmour_logo.jpg" alt="">
+						<img src="assets/img/sponsor/underArmour_logo.jpg" alt="">
 					</div>
 
 					<div
@@ -301,7 +301,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/GorillaMind.jpg" alt="">
+						<img src="assets/img/sponsor/GorillaMind.jpg" alt="">
 					</div>
 
 					<div
@@ -344,7 +344,7 @@
 					class="card h-100 text-center border-0 sponsor-card">
 
 					<div class="sponsor-img-container">
-						<img src="assets/img/bulk_logo.jpg" alt="">
+						<img src="assets/img/sponsor/bulk_logo.jpg" alt="">
 					</div>
 
 					<div
