@@ -10,6 +10,7 @@
   Palestra p = (Palestra) request.getAttribute("Palestra"); //creiamo un oggetto palestra che conterrà l'attributo Palestra della sessione
 Vector<Corso> corsi= (Vector<Corso>) request.getAttribute("corsi");
 %>
+
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -40,7 +41,7 @@ Vector<Corso> corsi= (Vector<Corso>) request.getAttribute("corsi");
 	<header class="masthead bg-primary text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5" src="/assets/logo.ico"  />
+			<img class="masthead-avatar mb-5" src="/assets/logo.png"  />
 			<!--adatta la dimensione del logo, e scrivi "logo" non log  -->
 			<!-- Masthead Heading-->
 			<h1 class="masthead-heading text-uppercase mb-0">Gestisci I
@@ -55,18 +56,17 @@ Vector<Corso> corsi= (Vector<Corso>) request.getAttribute("corsi");
 			<p></p>
 		</div>
 
-		<!-- 	<div class="col-6">
-			<p class="masthead-subheading font-weight-light mb-0">
-			<form class="row g-3" action="/privato/corsi/Corsi" method="post"> forse non va messo QUI
+			<div class="mb-3" style="text-align: left;">
+			<p class="masthead-subheading font-weight-light mb-0 ">
+			<form class="row g-3" action="/privato/corsi/Corsi" method="post"> 
 				<a href="aggiungi.html">
-					<button type="button" class="btn btn-secondary btn-lg">Add
-						student</button>
+					<button type="button" class="btn btn-secondary btn-lg">Aggiungi un corso</button>
 				</a>
 
 				</p>
-		</div> -->
+		</div> 
 
-		<p></p>
+		
 		<div class="container align-items-center">
 			<table class="table table-secondary table-hover">
 				<thead>
@@ -75,7 +75,7 @@ Vector<Corso> corsi= (Vector<Corso>) request.getAttribute("corsi");
 						<th scope="col">Nome</th>
 						<th scope="col">Costo</th>
 						<th scope="col">Tipo</th>
-						<!-- <th scope="col">Modify</th> -->
+						<!-- <th scope="col"></th> -->
 						<th scope="col"></th>
 					</tr>
 				</thead>
@@ -93,11 +93,11 @@ Vector<Corso> corsi= (Vector<Corso>) request.getAttribute("corsi");
 						
 				
 						<%-- <td><a
-							href="RichiediModifica?matricola=<%= s.getMatricola()%>"> <!-- Visto che ogni pagina deve riferirsi ad uno specifico studente si passa un parametro (l'id); inoltre dobbiamo trovare un modo per passare il parametro con metodo POST e non GET -->
-								<button type="button" class="btn btn-secondary btn-lg">Modify</button>
+							href="RichiediModifica?matricola=<%= c.getId()%>">
+								<button type="button" class="btn btn-secondary btn-lg">Modifica</button>
 						</a></td> --%>
 						<td><a
-							href="/privato/corsi/Corsi?Id=<%= c.getId()%>">
+							href="/privato/corsi/Corsi?id=<%= c.getId()%>">
 								<button type="button" class="btn btn-secondary btn-lg">Elimina</button>
 						</a></td>
 

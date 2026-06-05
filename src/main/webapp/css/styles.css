@@ -11586,7 +11586,26 @@ a.sponsor-card:hover {
 
 .masthead-avatar.mb-5{
 	
-	 max-height: 70%;    /* Dice alla foto: "Non puoi essere più alta del tuo recinto (80px)" */
-    max-width: 70%;
-    display: center;
+	width: 160px;       /* 1. Forziamo il logo a una larghezza ben visibile */
+    height: auto;        /* 2. Mantiene le proporzioni corrette in automatico */
+    margin-top: 40px;    /* 3. Gli diamo un po' di aria rispetto alla navbar */
+    margin-bottom: 15px;
+}
+.masthead {
+    
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+
+   
+    background-position: center 45% !important;
+}
+
+.masthead-heading {
+   
+    margin-top: 10px; 
+}
+.masthead-subheading.font-weight-light.mb-0{
+	display: flex;
+    justify-content: flex-start;
+	
 }

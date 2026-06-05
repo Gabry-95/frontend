@@ -68,10 +68,10 @@
 				<div id="carosello-1" class="carousel slide" data-bs-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="assets/img/atleta.jpg" class="d-block w-100" alt="...">
+							<img src="assets/img/carosello1/atleta.jpg" class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item">
-							<img src="assets/img/atleta2.jpg" class="d-block w-100" alt="...">
+							<img src="assets/img/carosello1/atleta2.jpg" class="d-block w-100" alt="...">
 						</div>
 					</div>
 					<button class="carousel-control-prev" type="button"
@@ -97,7 +97,7 @@
 
 				<!-- SLIDE 1 -->
 				<div class="carousel-item active">
-					<img src="assets/img/img1.jpg" class="d-block w-100" alt="...">
+					<img src="assets/img/carosello2/img1.jpg" class="d-block w-100" alt="...">
 					<div class="custom-slide-content">
 						<p class="text-secondary text-uppercase text-white">ALLENAMENTI
 							MIRATI</p>
@@ -109,7 +109,7 @@
 
 				<!-- SLIDE 2 -->
 				<div class="carousel-item">
-					<img src="assets/img/img2.jpg" class="d-block w-100" alt="...">
+					<img src="assets/img/carosello2/img2.jpg" class="d-block w-100" alt="...">
 					<div class="custom-slide-content">
 						<p class="slide-subtitle text-uppercase text-white">ATTREZZATURA
 							AL TOP</p>
@@ -120,7 +120,7 @@
 
 				<!-- SLIDE 3 -->
 				<div class="carousel-item">
-					<img src="assets/img/img3.jpg" class="d-block w-100" alt="...">
+					<img src="assets/img/carosello2/img3.jpg" class="d-block w-100" alt="...">
 					<div class="custom-slide-content">
 						<p class="slide-subtitle text-uppercase text-white">PESI E
 							MOLTO ALTRO</p>
@@ -159,7 +159,7 @@
 								<p class="mb-0">Non credi a ciò che diciamo? Dai un occhiata
 									tu stesso!</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/port1.jpg" alt="..." />
+						</div> <img class="img-fluid" src="assets/img/portfoglio/port1.jpg" alt="..." />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -169,7 +169,7 @@
 								<div class="h1">Abbonamenti</div>
 								<p class="mb-0">Visualizza i nostri piani di abbonamento</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/port2.jpg" alt="..." />
+						</div> <img class="img-fluid" src="assets/img/portfoglio/port2.jpg" alt="..." />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -180,7 +180,7 @@
 								<p class="mb-0">Visualizza le informazioni e i servizi
 									offerti dalla sede a te più comoda</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/port3.jpg" alt="..." />
+						</div> <img class="img-fluid" src="assets/img/portfoglio/port3.jpg" alt="..." />
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -191,7 +191,7 @@
 								<p class="mb-0">Scopri le storie di chi ha creduto nella
 									nostra mission</p>
 							</div>
-						</div> <img class="img-fluid" src="assets/img/port4.jpg" alt="..." />
+						</div> <img class="img-fluid" src="assets/img/portfoglio/port4.jpg" alt="..." />
 					</a>
 				</div>
 			</div>
