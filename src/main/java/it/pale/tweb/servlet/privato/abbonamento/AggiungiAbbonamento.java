@@ -34,52 +34,53 @@ public class AggiungiAbbonamento extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		int matricola=Integer.parseInt(request.getParameter("matricola"));
-		int fattura=Integer.parseInt(request.getParameter("fattura"));
-		String tipo=request.getParameter("tipo");
-		String[] checkbox = request.getParameterValues("corsi");
-		Vector<Corso> corsiSelezionati=new Vector<>();
-		int costiAggiuntivi=0;
-		boolean esitoF=true;
-		boolean esitoA=false;
-		
-		AbbonamentoDAO aDAO= new AbbonamentoDAO();
-		
-		if (checkbox!= null) {
+		try {
+			int matricola=Integer.parseInt(request.getParameter("matricola"));
+			int fattura=Integer.parseInt(request.getParameter("fattura"));
+			String tipo=request.getParameter("tipo");
+			String[] checkbox = request.getParameterValues("corsi");
+			Vector<Corso> corsiSelezionati=new Vector<>();
+			int costiAggiuntivi=0;
+			boolean esitoF=true;
+			boolean esitoA=false;
 			
-			CorsoDAO cDAO= new CorsoDAO();
-			FrequentaDAO fDAO= new FrequentaDAO();
+			AbbonamentoDAO aDAO= new AbbonamentoDAO();
 			
-			for(String s: checkbox) {
-				Corso c= new Corso();
-				c.setId(Integer.parseInt(s));
-				corsiSelezionati.add(c);
-			}
-			costiAggiuntivi=cDAO.costoCorsiAbbonamento(corsiSelezionati);
-			Abbonamento a= new Abbonamento(fattura, tipo, matricola, costiAggiuntivi);
-			esitoA=aDAO.salva(a);
-			for(Corso c: corsiSelezionati) {
-				esitoF=fDAO.salva(a, c);
-				if(esitoF!=true) {
-					break;
+			if (checkbox!= null) {
+				
+				CorsoDAO cDAO= new CorsoDAO();
+				FrequentaDAO fDAO= new FrequentaDAO();
+				
+				for(String s: checkbox) {
+					Corso c= new Corso();
+					c.setId(Integer.parseInt(s));
+					corsiSelezionati.add(c);
+				}
+				costiAggiuntivi=cDAO.costoCorsiAbbonamento(corsiSelezionati);
+				Abbonamento a= new Abbonamento(fattura, tipo, matricola, costiAggiuntivi);
+				esitoA=aDAO.salva(a);
+				for(Corso c: corsiSelezionati) {
+					esitoF=fDAO.salva(a, c);
+					if(esitoF!=true) {
+						break;
+					}
 				}
 			}
-		}
-		else {
-			Abbonamento a= new Abbonamento(fattura, tipo, matricola, costiAggiuntivi);
+			else {
+				Abbonamento a= new Abbonamento(fattura, tipo, matricola, costiAggiuntivi);
+				
+				esitoA=aDAO.salva(a);
+			}
 			
-			esitoA=aDAO.salva(a);
+			if(esitoA && esitoF) {
+				request.setAttribute("matricola", matricola);
+				request.getRequestDispatcher("/privato/abbonamento/DettagliAbbonamento").forward(request, response);
+			}
+			else {
+				response.sendRedirect("/WEB-INF/errore.jsp");
+			}
+		}catch(Exception e) {
+			response.sendRedirect("/WEB-INF/errore.jsp");
 		}
-		
-		if(esitoA && esitoF) {
-			request.setAttribute("matricola", matricola);
-			request.getRequestDispatcher("/WEB-INF/privato/abbonamento/DettagliAbbonamento").forward(request, response);
-		}
-		else {
-			request.getRequestDispatcher("/WEB-INF/errore1.jsp").forward(request, response);
-		}
-		
 	}
-
 }

@@ -28,9 +28,8 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("Palestra", 1);
+		request.getSession().setAttribute("Palestra", 1);
         
-		request.getRequestDispatcher("/WEB-INF/privato/index.jsp").forward(request, response);
+		response.sendRedirect("/Funzionalita");
 	}
 }

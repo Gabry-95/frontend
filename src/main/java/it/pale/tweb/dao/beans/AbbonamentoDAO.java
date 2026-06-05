@@ -38,6 +38,11 @@ public class AbbonamentoDAO {
 		abbonamento.setTipo(rs.getString("tipo"));
 		abbonamento.setDataScadenza(rs.getDate("dataScadenza"));
 		abbonamento.setLimiteIngressi(rs.getInt("limiteIngressi"));
+		if(rs.wasNull()) {
+			
+			//controllo su limiti ingressi null
+			abbonamento.setLimiteIngressi(null);
+		}
 		abbonamento.setCosto(rs.getInt("costo"));
 		abbonamento.setCliente(rs.getInt("cliente"));
 		return abbonamento;
@@ -184,9 +189,7 @@ public class AbbonamentoDAO {
 	
 	//dato una matricola di un cliente elenca fattura, tipo, data e limite di ingressi
 	public Abbonamento InfoAbbonamento(Cliente c) {
-		//fattura, tipo, dataScadenza, limiteIngressi
 		
-		//APPROCCIO CONSERVATIVO
 		String query = "SELECT * FROM Abbonamento "
 				+ "WHERE cliente=? "
 				+ "ORDER BY dataScadenza DESC "

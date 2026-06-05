@@ -111,4 +111,12 @@ public class Abbonamento {
 	public void setCliente(int cliente) {
 		this.cliente = cliente;
 	}
+
+	@Override
+	public String toString() {
+		return "Abbonamento [fattura=" + fattura + ", tipo=" + tipo + ", dataScadenza=" + dataScadenza
+				+ ", limiteIngressi=" + limiteIngressi + ", costo=" + costo + ", cliente=" + cliente + "]";
+	}
+	
+	
 }

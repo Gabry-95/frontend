@@ -34,8 +34,7 @@ public class RichiediAggiungiAbbonamento extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session=request.getSession();
-		int id=(int)session.getAttribute("Palestra");
+		int id=(int)request.getSession().getAttribute("Palestra");
 		Palestra p= new Palestra();
 		p.setId(id);
 				

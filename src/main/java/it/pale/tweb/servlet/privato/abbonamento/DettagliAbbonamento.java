@@ -38,19 +38,19 @@ public class DettagliAbbonamento extends HttpServlet {
 		
 		if(m!=null) {
 			
-			Integer matricola=Integer.parseInt(m);
 			Cliente cliente= new Cliente();
 			CorsoDAO cDAO= new CorsoDAO();
 			Vector<Corso> corsiSeguiti= new Vector<>();
-			cliente.setMatricola(matricola);
 			AbbonamentoDAO aDAO= new AbbonamentoDAO();
 			Abbonamento a= new Abbonamento();
 			boolean scadenza=false;
 			
 			try {
+				Integer matricola=Integer.parseInt(m);
+				cliente.setMatricola(matricola);
 				a=aDAO.InfoAbbonamento(cliente);
 				scadenza=aDAO.AbbonamentoScaduto(a);
-				if(a.getLimiteIngressi()==0) {
+				if(a.getLimiteIngressi()==null) {
 					corsiSeguiti=cDAO.getCorsiSeguiti(a);
 				}
 			}catch(Exception e) {

@@ -12,32 +12,22 @@ public class Test {
 		// TODO Auto-generated method stub
 		//Creo due oggetti abbonamento, uno relativo al DAO e uno relativo al Bean
 		AbbonamentoDAO abbonamentoDAO= new AbbonamentoDAO();
-		Abbonamento abbonamento=new Abbonamento();
-		//Adesso gli assegno:
-//		abbonamento.setFattura(100);
-//		abbonamento.setTipo("standard");
-//		abbonamento.setDataScadenza(new Date());
-//		abbonamento.setLimiteIngressi(3);
-//		abbonamento.setCosto(30);
-//		abbonamento.setCliente(8);
+		Abbonamento abbonamento=new Abbonamento(100, "Premium", 4, 0);
+
 
 		//METODO SALVA
 //		if (abbonamentoDAO.salva(abbonamento)) {
 //		System.out.println("Salvato "+abbonamento);
 //		}
 //		//MODIFICHIAMO GLI ATTRIBUTI DI ABBONAMENTO PER PROVARE IL METODO MODIFICA
-//		abbonamento.setTipo("gold");
-//		abbonamento.setDataScadenza(new Date(0));
-//		abbonamento.setLimiteIngressi(null);
-//		abbonamento.setCosto(50);
-//		abbonamento.setCliente(8);
+		abbonamento.setTipo("gold");
 		//METODO MODIFICA
 //		if (abbonamentoDAO.modifica(abbonamento)) {
 //		System.out.println("Modificato " + abbonamento);
 //		}
 //		//METODO GET
 //		abbonamento= abbonamentoDAO.get(abbonamento);
-//		System.out.println("Riletto " + abbonamento);
+//		System.out.println(abbonamento.toString());
 //		//METODO GETALL
 //		Vector<Abbonamento> Abbonamentos= abbonamentoDAO.getAll();
 //		for (Abbonamento a:Abbonamentos) {
@@ -48,22 +38,22 @@ public class Test {
 //		System.out.println(abbonamento);
 //		
 //		//METODO ELIMINA
-//		if(abbonamentoDAO.elimina(abbonamento));
-//		System.out.println("L'abbonamento " + abbonamento + " è stato eliminato" );
+		if(abbonamentoDAO.elimina(abbonamento));
+		System.out.println("L'abbonamento " + abbonamento + " è stato eliminato" );
 		//METODO RINNOVA ABBONAMENTO
 //		if(abbonamentoDAO.rinnovaAbbonamento(abbonamento));
 //		System.out.println("L'abbonamento è stato rinnovato " + abbonamento);
 //		
 		//INFO ABBONAMENTO
 //		Cliente cliente= new Cliente();
-//		cliente.setMatricola(3);
+//		cliente.setMatricola(2);
 //		Abbonamento info= abbonamentoDAO.InfoAbbonamento(cliente);
-//		System.out.println("Tipo " +info.getTipo() + "Data :" +info.getDataScadenza() + "Limite ingressi: "+ info.getLimiteIngressi());
+//		System.out.println("Tipo " +info.getTipo() + " Data :" +info.getDataScadenza() + " Limite ingressi: "+ info.getLimiteIngressi());
 		
 		//ABBONAMENTO SCADUTO
-		abbonamento.setFattura(1);
-		boolean scaduto=abbonamentoDAO.AbbonamentoScaduto(abbonamento);
-		System.out.println(scaduto);
+//		abbonamento.setFattura(1);
+//		boolean scaduto=abbonamentoDAO.AbbonamentoScaduto(abbonamento);
+//		System.out.println(scaduto);
 	
 	}
 }
